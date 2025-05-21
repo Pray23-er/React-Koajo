@@ -1,0 +1,64 @@
+/* ScrollingText.css */
+.scrolling-text-container {
+    width: 100%;
+    overflow: hidden; /* Hide the overflowing content */
+  }
+  
+  .scrolling-text {
+    display: flex; /* Arrange items horizontally */
+    white-space: nowrap; /* Prevent text from wrapping */
+    padding-left: 100%; /* Start off-screen to the right */
+    animation: scrollText 20s linear infinite; /* Define the animation */
+  }
+  
+  .pod-item {
+    display: inline-block; /* Allows horizontal spacing and styling */
+    margin-right: 15px; /* Add some spacing between the pills */
+  }
+  
+  @keyframes scrollText {
+    0% {
+      transform: translateX(0%); /* Start at the initial position */
+    }
+    100% {
+      transform: translateX(-100%); /* Move all the way to the left */
+    }
+  }
+
+  /* StylingText.css */
+    .section-slide-in {
+      opacity: 0;
+      transform: translateY(30px); /* Adjust the distance of the slide-in */
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .section-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scrolling-text-container {
+      overflow: hidden;
+      padding: 10px 0;
+      white-space: nowrap;
+    }
+
+    .scrolling-text {
+      display: inline-block;
+      padding-left: 100%; /* Start off-screen */
+      animation: scrollText 20s linear infinite; /* Adjust duration as needed */
+    }
+
+    .pod-item {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    @keyframes scrollText {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
