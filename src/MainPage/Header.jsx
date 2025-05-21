@@ -27,7 +27,7 @@ function Header() {
               height="30"
               className="d-inline-block align-top me-2"
             />
-            <span className="fw-bold text-dark">Korio</span>
+            <span className="fw-bold text-dark">Koajo</span>
           </Link>
           <button
             className="navbar-toggler"
