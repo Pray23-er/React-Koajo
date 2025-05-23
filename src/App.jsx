@@ -4,6 +4,7 @@ import LandingPage from './MainPage/Index';
 import AboutPage from './MainPage/About';
 import FAQPage from './MainPage/Faq';
 import BlogPage from './MainPage/Blog';
+import CareerPage from './MainPage/CareerPage';
  // You'll need to create this component
 import LoginPage from './Login/Login'; 
 import CreateAccountPage from './CreateAccount/CreateAccountPage';
@@ -17,6 +18,8 @@ import Header from './MainPage/Header';
 import AddAccountsPage from './CreateAccount/CompleteReg/AddAccountPage';
 import StripeKYCConfirmationPage from './CreateAccount/KYC/ConfirmationKYC';
 import MobileVerificationPage from './CreateAccount/KYC/MobileConfirmationPage';
+import LoginPageLayout from './Login/LoginPageLayout'; // Assuming this is the layout component for the login page
+
 
 
 // You'll need to create this component
@@ -37,11 +40,13 @@ function App() {
        <Route path="/login" element={<LoginPage />} />
       <Route path="/createaccount" element={<CreateAccountPage />} />
       <Route path="/email" element={<Email />} />
+      <Route path="/career" element={<CareerPage />} />
+
 
       <Route path="/Kyc" element={<KYCPage />} />
       <Route path="/KycConfirmation" element={<StripeKYCConfirmationPage />} />
      <Route path="/MobileVerification" element={<MobileVerificationPage />} />
-
+    <Route path="/loginlayout" element={<LoginPageLayout />} />
 
       <Route path="/Addaccount" element={<AddAccountsPage />} />
       <Route path="/connectaccount" element={<ConnectAccountPage />} />
@@ -55,7 +60,7 @@ function App() {
       
         
      </Routes>
-      
+     
     
    </BrowserRouter>
     

@@ -62,3 +62,19 @@
         transform: translateX(-100%);
       }
     }
+
+    /* animations.css */
+
+/* Base style for elements that will animate - invisible by default */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px); /* Start 50px below its final position */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+  will-change: opacity, transform; /* Optimize for animation */
+}
+
+/* Style for when the element becomes visible - animates to final position */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0); /* Move to its original position */
+}

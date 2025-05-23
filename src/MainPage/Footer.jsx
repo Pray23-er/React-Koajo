@@ -1,148 +1,136 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+ // Assuming you have a white logo for dark backgrounds
 
 function Footer() {
   return (
-    <footer className="site-footer bg-dark text-light py-5">
-      <div className="cta-section bg-dark text-white py-4 text-center">
-        <div className="container">
-          <h2>
-            Ready to unlock your <span style={{ color: "#ff8c42" }}>financial potential?</span>
+    <footer
+      className="py-0" // Removed top/bottom padding from main footer to control sections better
+      style={{
+        background: 'linear-gradient(to bottom right, #004d40, #ff8c42)', // Applied the requested gradient background
+      }}
+    >
+      <div className="container text-white py-5"> {/* Added py-5 here for the main content */}
+        {/* CTA Section (from previous conversation, matching the image design) */}
+        <div className="text-center mb-5 pb-4 border-bottom border-secondary">
+          <img
+           // Using the white logo for dark background
+            alt="Koajo Logo"
+            className="mb-4"
+            style={{ height: '50px' }}
+          />
+          <h2 className="display-4 fw-bold mb-3">
+            Ready for financial possibilities?
           </h2>
-          <p>
-            Don't miss out on the excitement! Stay tuned for all the thrilling events
-            we have lined up just for you!
+          <p className="lead mb-4 px-lg-5">
+            Every dollar saved is a step toward a future of security, independence,
+            and possibility. No matter how small, your savings today will shape a
+            brighter tomorrow.
           </p>
-          <a href="">
-            <button style={{ color: "white",
-            backgroundColor:"#ff8c42",
-            borderRadius:"15px"
-             }}> Join the Community <span aria-hidden="true">→</span></button>
-          </a>
+          <button className="btn btn-light btn-lg rounded-pill px-4 py-2 text-warning fw-bold">
+            Join the Community →
+          </button>
         </div>
-      </div>
-      <div className="container py-5">
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
-          <div className="col">
-            <div className="footer-logo">
-              <img
-               
-                alt="Koajo Logo"
-                className="img-fluid mb-2"
-                style={{ maxHeight: '50px' }}
-              />
-              <p className="tagline text-muted small">Make Online Payment Simple.</p>
-            </div>
+
+        {/* Footer Navigation and Info */}
+        <div className="row justify-content-center text-start g-4 pb-4 border-bottom border-secondary">
+          {/* Logo and Tagline */}
+          <div className="col-md-6 col-lg-3 d-flex flex-column align-items-start">
+            <img
+              // Re-using white logo for this section too
+              alt="Koajo Logo"
+              className="mb-3"
+              style={{ height: '40px' }}
+            />
+            <p className="text-white small">Make Online Payment Simple.</p>
           </div>
-          <div className="col">
-            <div className="footer-contact">
-              <h3>Contact</h3>
-              <p>(888) 456 7890</p>
-              <p>
-                <a href="mailto:info@example.com" className="text-light">
+
+          {/* Contact */}
+          <div className="col-md-6 col-lg-2">
+            <h4 className="fw-bold mb-3">Contact</h4>
+            <ul className="list-unstyled">
+              <li>(888) 456 7890</li>
+              <li>
+                <a href="mailto:info@example.com" className="text-light text-decoration-none">
                   info@example.com
                 </a>
-              </p>
-            </div>
+              </li>
+            </ul>
           </div>
-          <div className="col">
-            <div className="footer-address">
-              <h3>Address</h3>
-              <p>410 Sandtown,</p>
-              <p>California 9400/USA</p>
-            </div>
+
+          {/* Address */}
+          <div className="col-md-6 col-lg-2">
+            <h4 className="fw-bold mb-3">Address</h4>
+            <ul className="list-unstyled">
+              <li>410 Sandtown,</li>
+              <li>California 9400/USA</li>
+            </ul>
           </div>
-          <div className="col">
-            <div className="footer-links">
-              <h3>Quick Links</h3>
-              <ul className="list-unstyled">
-                <li>
-                  <a href="#" className="text-light">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-light">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-light">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-light">
-                    Pricing
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col">
-            <div className="footer-utilities">
-              <h3>Utility Pages</h3>
-              <ul className="list-unstyled">
-                <li>
-                  <a href="#" className="text-light">
-                    License
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-light">
-                    Changelog
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-light">
-                    Password
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-light">
-                    404 Error
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col">
-            <div className="footer-social">
-              <h3>Follow Us</h3>
-              <div className="d-flex gap-2">
-                <a href="#" className="btn btn-outline-light btn-sm rounded-pill">
-                  Facebook
+
+          {/* Quick Links */}
+          <div className="col-md-6 col-lg-2">
+            <h4 className="fw-bold mb-3">Quick Links</h4>
+            <ul className="list-unstyled">
+              <li>
+                <a href="home.html" className="text-light text-decoration-none">
+                  Home
                 </a>
-                <a href="#" className="btn btn-outline-light btn-sm rounded-pill">
-                  Twitter
+              </li>
+              <li>
+                <a href="about.html" className="text-light text-decoration-none">
+                  About
                 </a>
-                <a href="#" className="btn btn-outline-light btn-sm rounded-pill">
-                  LinkedIn
+              </li>
+              <li>
+                <a href="#" className="text-light text-decoration-none">
+                  Features
                 </a>
-              </div>
-            </div>
+              </li>
+              <li>
+                <a href="#" className="text-light text-decoration-none">
+                  Pricing
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Utility Pages */}
+          <div className="col-md-6 col-lg-2">
+            <h4 className="fw-bold mb-3">Utility Pages</h4>
+            <ul className="list-unstyled">
+              <li>
+                <a href="#" className="text-light text-decoration-none">
+                  License
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-light text-decoration-none">
+                  Changelog
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-light text-decoration-none">
+                  Password
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-light text-decoration-none">
+                  404 Error
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div className="footer-bottom bg-secondary text-muted py-3 text-center">
+      </div> {/* End of main container div */}
+
+      {/* Copyright and Disclaimer Section - White Background, Black Text */}
+      <div className="bg-white text-dark py-3 text-center"> {/* White background, dark text, padding */}
         <div className="container">
-          <p className="copyright mb-2">&copy;2025, Koajo. All Rights Reserved.</p>
-          <p className="disclaimer small">
-            Koajo is a fintech company, Koajo is not a bank, lender, advisor, broker,
-            fund manager, investment agency, MLM scheme, credit repair company,
-            credit reporting agency, money service business, money transmitter, an
-            issuer of stored value product or financial institution. Koajo has no
-            control over the conduct of its users and disclaims any and all
-            liabilities in this regard. Contributions before they are paid out are
-            held with American Express (AMEX). Members' FDIC/FDIC deposit insurance
-            covers accounts held with American Express (AMEX) in the event American
-            Express (AMEX) fails. Koajo does not offer investment returns or shares
-            on savings. Koajo is NOT structured to pool funds for investment
-            purposes or profit making for its users. Users relationship with Koajo
-            is a standalone understanding and their savings are cumulatively paid out
-            to them either in advance or arrears and is neither influenced or reliant
-            on the effort of others.
+          <p className="mb-2 small">
+            ©2025, Koajo. All Rights Reserved.
+          </p>
+          <p className="small px-lg-5">
+            Koajo is a fintech company, Koajo is not a bank, lender, advisor, broker, fund manager, investment agency, MLM scheme, credit repair company, credit reporting agency, money service business, money transmitter, an issuer of stored value product or financial institution. Koajo has no control over the conduct of its users and disclaims any and all liabilities in this regard. Contributions before they are paid out are held with American Express (AMEX). Members' FDIC/FDIC deposit insurance covers accounts held with American Express (AMEX) in the event American Express (AMEX) fails. Koajo does not offer investment returns or shares on savings. Koajo is NOT structured to pool funds for investment purposes or profit making for its users. Users relationship with Koajo is a standalone understanding and their savings are cumulatively paid out to them either in advance or arrears and is neither influenced or reliant on the effort of others.
           </p>
         </div>
       </div>
