@@ -14,11 +14,11 @@ function HeroSection() {
     <section
       className="d-flex flex-column text-white text-center" // Removed position-relative and overflow-hidden
       style={{
-        background: 'linear-gradient(to bottom right, #004d40, #ff8c42)', // Approximated gradient from image
+        background: 'linear-gradient(to top right, #004d40 60%, #ff8c42 100%)', // Approximated gradient from image
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: 'auto', // Allow height to be determined by content
-        paddingTop: '80px', // REDUCED TOP PADDING for less space at the top
+        paddingTop: '100px', // REDUCED TOP PADDING for less space at the top
         paddingBottom: '0', // No padding bottom on the section itself, managed by image margin
       }}
     >

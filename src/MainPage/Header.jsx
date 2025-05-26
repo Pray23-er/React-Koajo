@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import koajologo from '../assets/logo/logogradientbg.png'
 import { Link } from 'react-router-dom';
 
 function Header() {
@@ -22,6 +23,7 @@ function Header() {
           <Link className="navbar-brand d-flex align-items-center" to="/">
             {/* Replace with your actual logo image or text */}
             <img
+              src={koajologo}
               alt="Your Logo"
               height="30"
               className="d-inline-block align-top me-2"

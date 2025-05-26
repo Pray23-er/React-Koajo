@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import koajologo from '../assets/logo/logoCyan Blue bg.png'
  // Assuming you have a white logo for dark backgrounds
 
 function Footer() {
@@ -7,13 +8,14 @@ function Footer() {
     <footer
       className="py-0" // Removed top/bottom padding from main footer to control sections better
       style={{
-        background: 'linear-gradient(to bottom right, #004d40, #ff8c42)', // Applied the requested gradient background
+        background: 'linear-gradient(to top right, #004d40 68%, #ff8c42 100%)', // Applied the requested gradient background
       }}
     >
       <div className="container text-white py-5"> {/* Added py-5 here for the main content */}
         {/* CTA Section (from previous conversation, matching the image design) */}
         <div className="text-center mb-5 pb-4 border-bottom border-secondary">
           <img
+            src={koajologo}
            // Using the white logo for dark background
             alt="Koajo Logo"
             className="mb-4"
@@ -37,6 +39,7 @@ function Footer() {
           {/* Logo and Tagline */}
           <div className="col-md-6 col-lg-3 d-flex flex-column align-items-start">
             <img
+              src={koajologo}
               // Re-using white logo for this section too
               alt="Koajo Logo"
               className="mb-3"
@@ -124,7 +127,7 @@ function Footer() {
       </div> {/* End of main container div */}
 
       {/* Copyright and Disclaimer Section - White Background, Black Text */}
-      <div className="bg-white text-dark py-3 text-center"> {/* White background, dark text, padding */}
+      <div className="bg-light text-dark py-3 text-center"> {/* White background, dark text, padding */}
         <div className="container">
           <p className="mb-2 small">
             ©2025, Koajo. All Rights Reserved.

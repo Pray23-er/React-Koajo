@@ -109,104 +109,86 @@ function LandingPage() {
         </div>
       </div>
 
-      <section className="py-5 bg-black text-white text-center overflow-hidden section-slide-in">
+      <section className="py-5 bg-white text-dark text-center overflow-hidden section-slide-in">
+  <div className="container">
+    <h2 className="mb-4">Explore Different Pod Types</h2>
+    <div className="scrolling-text-container">
+      <div className="scrolling-text">
+        {podNames.map((name, index) => (
+          <span key={index} className="pod-item rounded-pill px-4 py-2 me-3" style={{ backgroundColor: '#666', color: 'white' }}>
+            {name}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section className="py-5  text-white text-center section-slide-in" style={{ backgroundColor: '#00332B' }}>
         <div className="container">
-          <h2 className="mb-4">Explore Different Pod Types</h2>
-          <div className="scrolling-text-container">
-            <div className="scrolling-text">
-              {podNames.map((name, index) => (
-                <span key={index} className="pod-item rounded-pill px-4 py-2 me-3" style={{ backgroundColor: '#333' }}>
-                  {name}
-                </span>
-              ))}
+          <h2 className="fw-bold">See How We Are  <span className="text-warning fw-bold"> Empowering Millions</span> </h2>
+          
+        </div>
+      </section>
+
+     <section className="py-5" style={{   background: 'linear-gradient(to top right, #00332B 68%, white 100%)', // Applied the requested gradient background
+      }} > {/* Black background */}
+  <div className="container text-white"> {/* Text color set to white for contrast */}
+
+    <div className="row align-items-center">
+      {/* Left: Login/Signup Form as Image */}
+      <div className="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
+        {/* Replace this with the actual path to your cropped login form image */}
+        <img
+          src={loginform}
+          alt="Login Form Mockup"
+          className="img-fluid rounded-lg shadow-lg" // Added Bootstrap classes for responsiveness and style
+          style={{ maxWidth: '450px', borderRadius: '15px' }} // Added inline style for specific rounding and max-width
+        />
+      </div>
+
+      {/* Right: Steps Guide */}
+      <div className="col-lg-6">
+        
+        <div className="d-flex flex-column gap-5 py-4">
+          {/* Step 1 */}
+          <div className="d-flex align-items-start">
+            <div className="flex-shrink-0 me-3">
+              <span className="badge bg-warning rounded-circle p-2 px-3 fw-bold fs-5">01</span> {/* Removed text-dark */}
+            </div>
+            <div>
+              <h3 className="fw-bold mb-2">Sign Up & Get Started</h3>
+              <p className=""> {/* Changed text-muted to text-white */}
+                Create your Koajo account in just a few minutes and easily verify
+                your identity to enjoy seamless access to all features and services.
+              </p>
+              <p className="small">No hassle, no sign-up fees.</p> {/* Changed text-muted to text-white */}
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="py-5 bg-dark text-white text-center section-slide-in">
-        <div className="container">
-          <h2 className="fw-bold mb-2">See how it all fits in</h2>
-          <h2 className="display-4 text-warning fw-bold">4 easy steps!</h2>
-        </div>
-      </section>
+          {/* Step 2 */}
+          <div className="d-flex align-items-start">
+            <div className="flex-shrink-0 me-3">
+              <span className="badge bg-warning rounded-circle p-2 px-3 fw-bold fs-5">02</span> {/* Removed text-dark */}
+            </div>
+            <div>
+              <h3 className="fw-bold mb-2">Choose or Create a Pod</h3>
+              <p className=""> {/* Changed text-muted to text-white */}
+                Join a savings pod that fits your saving & financial goals or start
+                your own with people you trust. Each pod runs for 12 weeks at a
+                time, giving you short term access to the Lumpsum.
+              </p>
+            </div>
+          </div>
 
-     <section className="py-5" style={{ backgroundColor: '#000' }}> {/* Black background */}
-      <div className="container text-white"> {/* Text color set to white for contrast */}
+          {/* Steps 3 and 4 */}
        
-        <div className="row align-items-center">
-          {/* Left: Login/Signup Form as Image */}
-          <div className="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
-            {/* Replace this with the actual path to your cropped login form image */}
-            <img
-              src={loginform}
-              alt="Login Form Mockup"
-              className="img-fluid rounded-lg shadow-lg" // Added Bootstrap classes for responsiveness and style
-              style={{ maxWidth: '450px', borderRadius: '15px' }} // Added inline style for specific rounding and max-width
-            />
-          </div>
-
-          {/* Right: Steps Guide */}
-          <div className="col-lg-6">
-            <div className="d-flex flex-column gap-5 py-4">
-              {/* Step 1 */}
-              <div className="d-flex align-items-start">
-                <div className="flex-shrink-0 me-3">
-                  <span className="badge bg-warning rounded-circle text-dark p-2 px-3 fw-bold fs-5">01</span>
-                </div>
-                <div>
-                  <h3 className="fw-bold mb-2">Sign Up & Get Started</h3>
-                  <p className="text-muted">
-                    Create your Koajo account in just a few minutes and easily verify
-                    your identity to enjoy seamless access to all features and services.
-                  </p>
-                  <p className="text-muted small">No hassle, no sign-up fees.</p>
-                </div>
-              </div>
-
-              {/* Step 2 */}
-              <div className="d-flex align-items-start">
-                <div className="flex-shrink-0 me-3">
-                  <span className="badge bg-warning rounded-circle text-dark p-2 px-3 fw-bold fs-5">02</span>
-                </div>
-                <div>
-                  <h3 className="fw-bold mb-2">Choose or Create a Pod</h3>
-                  <p className="text-muted">
-                    Join a savings pod that fits your saving & financial goals or start
-                    your own with people you trust. Each pod runs for 12 weeks at a
-                    time, giving you short term access to the Lumpsum.
-                  </p>
-                </div>
-              </div>
-
-              {/* Steps 3 and 4 (placeholders as they are not fully visible in the image) */}
-              <div className="d-flex align-items-start">
-                <div className="flex-shrink-0 me-3">
-                  <span className="badge bg-warning rounded-circle text-dark p-2 px-3 fw-bold fs-5">03</span>
-                </div>
-                <div>
-                  <h3 className="fw-bold mb-2">Save Consistently</h3>
-                  <p className="text-muted">
-                    Automate your contributions or make manual payments according to your pod's schedule.
-                  </p>
-                </div>
-              </div>
-              <div className="d-flex align-items-start">
-                <div className="flex-shrink-0 me-3">
-                  <span className="badge bg-warning rounded-circle text-dark p-2 px-3 fw-bold fs-5">04</span>
-                </div>
-                <div>
-                  <h3 className="fw-bold mb-2">Receive Your Payout</h3>
-                  <p className="text-muted">
-                    Get your lump sum payout directly to your bank account when it's your turn in the cycle.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
             <KoajoBenefits/>
     

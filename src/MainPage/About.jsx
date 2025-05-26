@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'; // Import useRef, us
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './StylingText.css'; // Your existing CSS file
  // Import your animations CSS
+import aboutheroImage from '../assets/img/about_hero_image.jpeg'; // 
 import whatDrivesKoajoImage from '../assets/img/phone.png'; 
 import williamIkwoagoImage from '../assets/img/william.png';
 import amaAdeniyiImage from '../assets/img/ama.png'; // <--- UPDATE THIS PATH
@@ -81,7 +82,7 @@ function AboutPage() {
 
               {/* Video Placeholder (based on the play button icon in the image) */}
               <div className="video-placeholder position-relative d-inline-block mt-4" style={{ width: '100%', maxWidth: '900px', aspectRatio: '16/9', backgroundColor: 'rgba(0,0,0,0.3)', borderRadius: '15px', overflow: 'hidden' }}>
-                <img
+                <img src={aboutheroImage} // <--- FIXED: Added src attribute
                    // <--- FIXED: Added src attribute
                   alt="People interacting with Koajo platform"
                   className="img-fluid w-100 h-100"

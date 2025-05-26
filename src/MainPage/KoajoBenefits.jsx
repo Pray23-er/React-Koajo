@@ -61,6 +61,7 @@ function KoajoBenefits() {
                 <p className="mb-0 small text-muted">Rated 4.9/5 from over <span className="text-dark fw-bold">600</span> review</p>
               </div>
             </div>
+
             <div className="col-lg-8">
               <div className="row g-4">
                 {/* Feature 1: Flexible for Every Financial Goal */}
@@ -133,6 +134,7 @@ function KoajoBenefits() {
       <section
         ref={section2Ref}
         className={`py-5 bg-dark text-white ${isSection2Visible ? 'animate-on-scroll is-visible' : 'animate-on-scroll'}`}
+        style={{ background: 'linear-gradient(to bottom right, #00332B 68%, white 100%)' }} // Dark teal background
       >
         <div className="container">
           <div className="text-center mb-5">

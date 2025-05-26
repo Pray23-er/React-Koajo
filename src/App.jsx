@@ -18,7 +18,8 @@ import Header from './MainPage/Header';
 import AddAccountsPage from './CreateAccount/CompleteReg/AddAccountPage';
 import StripeKYCConfirmationPage from './CreateAccount/KYC/ConfirmationKYC';
 import MobileVerificationPage from './CreateAccount/KYC/MobileConfirmationPage';
-import LoginPageLayout from './Login/LoginPageLayout'; // Assuming this is the layout component for the login page
+import LoginPageLayout from './Login/LoginPageLayout';
+import UserDashboard from './Dashboard/UserDashboard'; // Assuming this is the layout component for the login page
 
 
 
@@ -60,8 +61,7 @@ function App() {
       
         
      </Routes>
-     
-    
+
    </BrowserRouter>
     
     </>
