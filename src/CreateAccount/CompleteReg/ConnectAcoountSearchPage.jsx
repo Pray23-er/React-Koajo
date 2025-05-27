@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BsArrowLeft, BsCheckCircleFill } from 'react-icons/bs'; // For icons
+import { BsArrowLeft, BsCheckCircleFill, BsSearch } from 'react-icons/bs'; // Added BsSearch import
+
+
+import chaseLogo from '../../assets/banklogos/chaselogo.jpeg';
+import wellsFargoLogo from '../../assets/banklogos/wellsfargo.jpeg';
+import bankOfAmericaLogo from '../../assets/banklogos/bankof ame.jpeg';
+import citiLogo from '../../assets/banklogos/citibank.jpeg';
+import americanExpressLogo from '../../assets/banklogos/American Express.jpeg';
+import allyLogo from '../../assets/banklogos/Ally.jpeg';
+import fidelityLogo from '../../assets/banklogos/Fidelity.jpeg';
+import vanguardLogo from '../../assets/banklogos/Vanguard.jpeg';
+import robinhoodLogo from '../../assets/banklogos/robinhood.jpeg';
+import chimeLogo from '../../assets/banklogos/chime.jpeg';
+
 
 function ConnectAccountSearchPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -9,6 +22,20 @@ function ConnectAccountSearchPage() {
     // Add more search results as needed
   ]);
 
+  // Data URLs for bank logos to ensure they always load
+  const bankLogos = [
+      { name: 'Chase', url: chaseLogo }, // Use the imported image variable
+      { name: 'Wells Fargo', url: wellsFargoLogo },
+      { name: 'Bank of America', url: bankOfAmericaLogo },
+      { name: 'Citi', url: citiLogo },
+      { name: 'American Express', url: americanExpressLogo },
+      { name: 'Ally', url: allyLogo },
+      { name: 'Fidelity', url: fidelityLogo },
+      { name: 'Vanguard', url: vanguardLogo },
+      { name: 'Robinhood', url: robinhoodLogo },
+      { name: 'Chime', url: chimeLogo },
+      // Add other bank logos here, using their imported variables
+    ];
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
     // In a real application, you would filter search results based on the input
@@ -18,7 +45,7 @@ function ConnectAccountSearchPage() {
   return (
     <div className="min-vh-100 d-flex bg-light">
       {/* Left Sidebar */}
-      <div className="bg-info text-white p-4 d-none d-md-flex flex-column justify-content-between" style={{ width: '300px' }}>
+      <div className="text-white p-4 d-none d-md-flex flex-column justify-content-between" style={{ width: '300px',backgroundColor:'#276a6a' }}>
         <div>
           <h1 className="h3 font-weight-bold mb-4">
             Ko<span className="text-warning">ajo</span>
@@ -64,7 +91,7 @@ function ConnectAccountSearchPage() {
           </div>
         </div>
         <div className="text-white-50 small">
-          © Koajo. All rights reserved. <br />
+          &copy; Koajo. All rights reserved. <br />
           <a href="#" className="text-white-50 text-decoration-underline">Term & Condition</a> | <a href="#" className="text-white-50 text-decoration-underline">Privacy & Policy</a>
         </div>
       </div>
@@ -90,9 +117,7 @@ function ConnectAccountSearchPage() {
                 onChange={handleSearchChange}
               />
               <button className="btn btn-outline-secondary btn-sm" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
+                <BsSearch size={16} /> {/* Using BsSearch icon from react-icons */}
               </button>
             </div>
           </div>
@@ -113,70 +138,17 @@ function ConnectAccountSearchPage() {
           <hr className="my-3" />
           <p className="text-center text-gray-600 small mb-3">Or Select from popular ones</p>
           <div className="row row-cols-3 row-cols-md-4 g-2 mb-4">
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/007bff/FFFFFF?Text=Chase" alt="Chase" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/dc3545/FFFFFF?Text=Chase" alt="Chase" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/28a745/FFFFFF?Text=Wells" alt="Wells Fargo Bank" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/6c757d/FFFFFF?Text=CapitalOne" alt="Capital One" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/0d6efd/FFFFFF?Text=Amex" alt="American Express" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/007bff/FFFFFF?Text=Citibank" alt="Citibank" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/28a745/FFFFFF?Text=Fidelity" alt="Fidelity Inv" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/dc3545/FFFFFF?Text=Vanguard" alt="Vanguard" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/198754/FFFFFF?Text=Robinhood" alt="Robinhood" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/6c757d/FFFFFF?Text=Chime" alt="Chime" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/6f42c1/FFFFFF?Text=Ally" alt="Ally Bank" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
-            <div className="col">
-              <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                <img src="https://via.placeholder.com/80/28a745/FFFFFF?Text=Hills" alt="Hills Bank" className="img-fluid" style={{ maxHeight: '30px' }} />
-              </button>
-            </div>
+            {bankLogos.map((bank, index) => (
+              <div className="col" key={index}>
+                <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
+                  <img src={bank.url} alt={bank.name} className="img-fluid" style={{ maxHeight: '100px' }} />
+                </button>
+              </div>
+            ))}
           </div>
           <div className="d-flex justify-content-center align-items-center mt-3">
             <p className="text-center text-gray-600 small mr-2 mb-0">Track an asset or cash account</p>
-            <button className="btn btn-link btn-sm text-info">Add Manual Account</button>
+            <a href="/setupcomplete"><button className="btn btn-primary btn-sm text-info">Complete</button></a>
           </div>
         </div>
       </div>
@@ -184,4 +156,4 @@ function ConnectAccountSearchPage() {
   );
 }
 
-export default ConnectAccountSearchPage;                  z
+export default ConnectAccountSearchPage;

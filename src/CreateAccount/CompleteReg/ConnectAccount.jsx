@@ -2,18 +2,32 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BsArrowLeft, BsCheckCircleFill } from 'react-icons/bs'; // For icons
 
+// Import your local bank logo images here
+import chaseLogo from '../../assets/banklogos/chaselogo.jpeg';
+import wellsFargoLogo from '../../assets/banklogos/wellsfargo.jpeg';
+import bankOfAmericaLogo from '../../assets/banklogos/bankof ame.jpeg';
+import citiLogo from '../../assets/banklogos/citibank.jpeg';
+import americanExpressLogo from '../../assets/banklogos/American Express.jpeg';
+import allyLogo from '../../assets/banklogos/Ally.jpeg';
+import fidelityLogo from '../../assets/banklogos/Fidelity.jpeg';
+import vanguardLogo from '../../assets/banklogos/Vanguard.jpeg';
+import robinhoodLogo from '../../assets/banklogos/robinhood.jpeg';
+import chimeLogo from '../../assets/banklogos/chime.jpeg';
+// Add imports for any other logos you have
+
 function ConnectAccountPage() {
   const bankLogos = [
-    { name: 'Chase', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/JPMorgan_Chase_logo.svg/1200px-JPMorgan_Chase_logo.svg.png' },
-    { name: 'Wells Fargo', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wells_Fargo_%282018%29.svg/1280px-Wells_Fargo_%282018%29.svg.png' },
-    { name: 'Bank of America', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Bank_of_America_%282012-2019%29_logo.svg/1280px-Bank_of_America_%282012-2019%29_logo.svg.png' },
-    { name: 'Citi', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Citibank.svg/1920px-Citibank.svg.png' },
-    { name: 'American Express', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/American_Express_logo_%282018%29.svg/1920px-American_Express_logo_%282018%29.svg.png' },
-    { name: 'Ally', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Ally_Financial_logo.svg/1280px-Ally_Financial_logo.svg.png' },
-    { name: 'Fidelity', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Fidelity_Investments_logo.svg/1280px-Fidelity_Investments_logo.svg.png' },
-    { name: 'Vanguard', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Vanguard_Group_logo.svg/1280px-Vanguard_Group_logo.svg.png' },
-    { name: 'Robinhood', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Robinhood_logo.svg/1920px-Robinhood_logo.svg.png' },
-    { name: 'Chime', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Chime_%28company%29_logo.svg/1280px-Chime_%28company%29_logo.svg.png' },
+    { name: 'Chase', url: chaseLogo }, // Use the imported image variable
+    { name: 'Wells Fargo', url: wellsFargoLogo },
+    { name: 'Bank of America', url: bankOfAmericaLogo },
+    { name: 'Citi', url: citiLogo },
+    { name: 'American Express', url: americanExpressLogo },
+    { name: 'Ally', url: allyLogo },
+    { name: 'Fidelity', url: fidelityLogo },
+    { name: 'Vanguard', url: vanguardLogo },
+    { name: 'Robinhood', url: robinhoodLogo },
+    { name: 'Chime', url: chimeLogo },
+    // Add other bank logos here, using their imported variables
   ];
 
   return (
@@ -100,14 +114,14 @@ function ConnectAccountPage() {
             {bankLogos.map((bank, index) => (
               <div className="col" key={index}>
                 <button className="btn btn-outline-light border rounded d-flex align-items-center justify-content-center p-2 w-100">
-                  <img src={bank.url} alt={bank.name} className="img-fluid" style={{ maxHeight: '30px' }} />
+                  <img src={bank.url} alt={bank.name} className="img-fluid" style={{ maxHeight: '100px' }} />
                 </button>
               </div>
             ))}
           </div>
           <div className="d-flex justify-content-center align-items-center mt-3">
             <p className="text-center text-gray-600 small mr-2 mb-0">Track an asset or cash account</p>
-            <button className="btn btn-link btn-sm text-info">Add Manual Account</button>
+            <a href="/searchaccount"><button className="btn btn-link btn-sm text-info">Add Manual Account</button></a>
           </div>
         </div>
       </div>

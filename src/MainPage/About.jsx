@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './StylingText.css'; // Your existing CSS file
  // Import your animations CSS
 import aboutheroImage from '../assets/img/about_hero_image.jpeg'; // 
+import aboutphoneImage from '../assets/img/about_image_phone.jpeg'; // <--- UPDATE THIS PATH
 import whatDrivesKoajoImage from '../assets/img/phone.png'; 
 import williamIkwoagoImage from '../assets/img/william.png';
 import amaAdeniyiImage from '../assets/img/ama.png'; // <--- UPDATE THIS PATH
@@ -123,7 +124,7 @@ function AboutPage() {
               </div>
               <div className="col-lg-6 text-center">
                 <img
-                  // Make sure this path is correct
+                  src={aboutphoneImage} // <--- FIXED: Added src attribute
                   alt="Koajo security and compliance dashboard on mobile phones"
                   className="img-fluid rounded shadow-lg"
                   style={{ maxWidth: '100%', height: 'auto', borderRadius: '15px' }}

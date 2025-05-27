@@ -72,9 +72,9 @@ function SetupCompletePage() {
           </div>
           <h2 className="h5 font-weight-bold text-gray-900 text-center mb-3">Set up complete!</h2>
           <p className="text-gray-600 text-center small mb-4">You're ready to shoot for the stars.</p>
-          <button className="btn btn-warning btn-sm btn-block">
+          <a href="/login">  <button className="btn btn-warning btn-sm btn-block">
             Continue
-          </button>
+          </button></a>
         </div>
       </div>
     </div>

@@ -20,6 +20,8 @@ import StripeKYCConfirmationPage from './CreateAccount/KYC/ConfirmationKYC';
 import MobileVerificationPage from './CreateAccount/KYC/MobileConfirmationPage';
 import LoginPageLayout from './Login/LoginPageLayout';
 import UserDashboard from './Dashboard/UserDashboard'; // Assuming this is the layout component for the login page
+import ConnectAccountSearchPage from './CreateAccount/CompleteReg/ConnectAcoountSearchPage';
+import SetupCompletePage from './CreateAccount/CompleteReg/CompleteSetupPage';
 
 
 
@@ -51,6 +53,8 @@ function App() {
 
       <Route path="/Addaccount" element={<AddAccountsPage />} />
       <Route path="/connectaccount" element={<ConnectAccountPage />} />
+      <Route path="/searchaccount" element={<ConnectAccountSearchPage/>} />
+      <Route path="/setupcomplete" element={<SetupCompletePage/>} />
 
 
       <Route path="/resetpassword" element={<ResetPasswordPage />} />

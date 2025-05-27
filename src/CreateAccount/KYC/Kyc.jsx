@@ -1,4 +1,5 @@
 import React from 'react';
+import stripelogo from '../../assets/img/stripe.jpeg'; // Adjust the path as necessary
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function KYCPage() {
@@ -74,7 +75,7 @@ function KYCPage() {
           </div>
           <div className="d-flex flex-column align-items-center mb-4">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Stripe_Logo_Lockup_Blue_RGB.svg/2560px-Stripe_Logo_Lockup_Blue_RGB.svg.png"
+              src={stripelogo}
               alt="Stripe Logo"
               className="img-fluid mb-3"
               style={{ maxWidth: '150px' }}

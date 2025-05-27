@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import stripelogo from '../../assets/img/stripe.jpeg';
 import { BsArrowLeft, BsCheckCircleFill } from 'react-icons/bs'; // For icons
 
 function StripeKYCConfirmationPage() {
@@ -46,7 +47,7 @@ function StripeKYCConfirmationPage() {
               </svg>
             </div>
             <div>
-              <strong className="d-block">Add Accounts</strong>
+              <strong className="d-block">Complete</strong>
               <span className="text-white-50 small">Add your account to Continue</span>
             </div>
           </div>
@@ -67,7 +68,7 @@ function StripeKYCConfirmationPage() {
           </div>
           <div className="d-flex flex-column align-items-center mb-4">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Stripe_Logo_Lockup_Blue_RGB.svg/2560px-Stripe_Logo_Lockup_Blue_RGB.svg.png"
+              src={stripelogo}
               alt="Stripe Logo"
               className="img-fluid mb-2"
               style={{ maxWidth: '150px' }}

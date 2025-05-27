@@ -209,129 +209,129 @@ const FAQPage = () => {
                 </p>
                 </div>
 
-                <div className="row justify-content-center g-4">
-                {/* Icon Box 1: Getting Started */}
-                <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-                    <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
-                    <div className="card-body">
-                        {/* Placeholder for Icon - Use Bootstrap Icons or FontAwesome */}
-                        <div className="mb-3">
-                        <i className="bi bi-calendar-check-fill display-5" style={{ color: '#ff8c42' }}></i>
+                 <div className="row justify-content-center g-4">
+                    {/* Icon Box 1: Getting Started */}
+                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
+                        <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
+                        <div className="card-body">
+                            <div className="mb-3">
+                            <i className="bi bi-calendar-check-fill display-5" style={{ color: '#ff8c42' }}></i>
+                            </div>
+                            <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Getting Started</h5>
+                            <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+                            Learn how to set up your account and start using our platform effectively.
+                            </p>
                         </div>
-                        <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Getting started</h5> {/* Applied to card title */}
-                        <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-                        Lorem ipsum dolor sit amet nulla vitae imperdiet.
-                        </p>
+                        </div>
                     </div>
+
+                    {/* Icon Box 2: Customer Service */}
+                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
+                        <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
+                        <div className="card-body">
+                            <div className="mb-3">
+                            <i className="bi bi-chat-dots-fill display-5" style={{ color: '#ff8c42' }}></i>
+                            </div>
+                            <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Customer Service</h5>
+                            <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+                            Get help with any questions or issues you have with our platform.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    {/* Icon Box 3: Account Security */}
+                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
+                        <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
+                        <div className="card-body">
+                            <div className="mb-3">
+                            <i className="bi bi-shield-lock-fill display-5" style={{ color: '#ff8c42' }}></i>
+                            </div>
+                            <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Account Security</h5>
+                            <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+                            Learn how to keep your account secure and protect your data.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    {/* Icon Box 4: Advanced Settings */}
+                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
+                        <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
+                        <div className="card-body">
+                            <div className="mb-3">
+                            <i className="bi bi-gear-fill display-5" style={{ color: '#ff8c42' }}></i>
+                            </div>
+                            <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Advanced Settings</h5>
+                            <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+                            Customize your experience with advanced features and settings.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    {/* Icon Box 5: Troubleshooting */}
+                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
+                        <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
+                        <div className="card-body">
+                            <div className="mb-3">
+                            <i className="bi bi-exclamation-triangle-fill display-5" style={{ color: '#ff8c42' }}></i>
+                            </div>
+                            <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Troubleshooting</h5>
+                            <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+                            Find solutions to common issues and errors.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    {/* Icon Box 6: Community Forum */}
+                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
+                        <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
+                        <div className="card-body">
+                            <div className="mb-3">
+                            <i className="bi bi-people-fill display-5" style={{ color: '#ff8c42' }}></i>
+                            </div>
+                            <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Community Forum</h5>
+                            <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+                            Connect with other users, ask questions, and share knowledge.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    {/* Icon Box 7: Documentation */}
+                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
+                        <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
+                        <div className="card-body">
+                            <div className="mb-3">
+                            <i className="bi bi-file-earmark-text-fill display-5" style={{ color: '#ff8c42' }}></i>
+                            </div>
+                            <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Documentation</h5>
+                            <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+                            Access detailed guides and documentation for our platform.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    {/* Icon Box 8: Best Practices */}
+                    <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
+                        <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
+                        <div className="card-body">
+                            <div className="mb-3">
+                            <i className="bi bi-book-half display-5" style={{ color: '#ff8c42' }}></i>
+                            </div>
+                            <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Best Practices</h5>
+                            <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+                            Learn how to get the most out of our platform with expert tips and advice.
+                            </p>
+                        </div>
+                        </div>
                     </div>
                 </div>
+               {/* End row */}
 
-                {/* Icon Box 2: Customer Service */}
-                <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-                    <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
-                    <div className="card-body">
-                        <div className="mb-3">
-                        <i className="bi bi-chat-dots-fill display-5" style={{ color: '#ff8c42' }}></i>
-                        </div>
-                        <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Customer Service</h5>
-                        <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-                        Lorem ipsum dolor sit amet nulla vitae imperdiet.
-                        </p>
-                    </div>
-                    </div>
-                </div>
-
-                {/* Icon Box 3: Account Security */}
-                <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-                    <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
-                    <div className="card-body">
-                        <div className="mb-3">
-                        <i className="bi bi-shield-lock-fill display-5" style={{ color: '#ff8c42' }}></i>
-                        </div>
-                        <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Account Security</h5>
-                        <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-                        Lorem ipsum dolor sit amet nulla vitae imperdiet.
-                        </p>
-                    </div>
-                    </div>
-                </div>
-
-                {/* Icon Box 4: Advanced settings */}
-                <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-                    <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
-                    <div className="card-body">
-                        <div className="mb-3">
-                        <i className="bi bi-gear-fill display-5" style={{ color: '#ff8c42' }}></i>
-                        </div>
-                        <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Advanced settings</h5>
-                        <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-                        Lorem ipsum dolor sit amet nulla vitae imperdiet.
-                        </p>
-                    </div>
-                    </div>
-                </div>
-
-                {/* Icon Box 5: Troubleshooting */}
-                <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-                    <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
-                    <div className="card-body">
-                        <div className="mb-3">
-                        <i className="bi bi-exclamation-triangle-fill display-5" style={{ color: '#ff8c42' }}></i>
-                        </div>
-                        <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Troubleshooting</h5>
-                        <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-                        Lorem ipsum dolor sit amet nulla vitae imperdiet.
-                        </p>
-                    </div>
-                    </div>
-                </div>
-
-                {/* Icon Box 6: Build Your Network */}
-                <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-                    <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
-                    <div className="card-body">
-                        <div className="mb-3">
-                        <i className="bi bi-people-fill display-5" style={{ color: '#ff8c42' }}></i>
-                        </div>
-                        <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Build Your Network</h5>
-                        <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-                        Lorem ipsum dolor sit amet nulla vitae imperdiet.
-                        </p>
-                    </div>
-                    </div>
-                </div>
-
-                {/* Icon Box 7: Documentation */}
-                <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-                    <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
-                    <div className="card-body">
-                        <div className="mb-3">
-                        <i className="bi bi-file-earmark-text-fill display-5" style={{ color: '#ff8c42' }}></i>
-                        </div>
-                        <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Documentation</h5>
-                        <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-                        Lorem ipsum dolor sit amet nulla vitae imperdiet.
-                        </p>
-                    </div>
-                    </div>
-                </div>
-
-                {/* Icon Box 8: Real-Life Lessons */}
-                <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-                    <div className="card h-100 border-0 shadow-sm text-center p-3" style={{ borderRadius: '15px' }}>
-                    <div className="card-body">
-                        <div className="mb-3">
-                        <i className="bi bi-book-half display-5" style={{ color: '#ff8c42' }}></i>
-                        </div>
-                        <h5 className="card-title fw-bold mb-2" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>Real-Life Lessons</h5>
-                        <p className="card-text small" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-                        Lorem ipsum dolor sit amet nulla vitae imperdiet.
-                        </p>
-                    </div>
-                    </div>
-                </div>
-
-                </div> {/* End row */}
             </div> {/* End container */}
             </section>
 

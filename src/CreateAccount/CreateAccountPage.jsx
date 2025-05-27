@@ -75,7 +75,7 @@ function CreateAccountPage() {
               </svg>
             </div>
             <div>
-              <strong className="d-block">Add Accounts</strong>
+              <strong className="d-block">Complete</strong>
              <a href="/addaccount">
               <span className="text-white-50 small">Add your account to Continue</span>
              </a>

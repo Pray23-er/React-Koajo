@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import stripelogo from '../../assets/img/stripe.jpeg'; // Adjust the path as necessary
 import { BsArrowLeft, BsCheckCircleFill } from 'react-icons/bs'; // For icons
 
 function MobileVerificationPage() {
@@ -46,7 +47,7 @@ function MobileVerificationPage() {
               </svg>
             </div>
             <div>
-              <strong className="d-block">Add Accounts</strong>
+              <strong className="d-block">Complete</strong>
               <span className="text-white-50 small">Add your account to Continue</span>
             </div>
           </div>
@@ -70,7 +71,7 @@ function MobileVerificationPage() {
               <div className="progress-bar bg-info" role="progressbar" style={{ width: '50%' }} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Stripe_Logo_Lockup_Blue_RGB.svg/2560px-Stripe_Logo_Lockup_Blue_RGB.svg.png"
+              src={stripelogo}
               alt="Stripe Logo"
               className="img-fluid mb-2"
               style={{ maxWidth: '150px' }}
