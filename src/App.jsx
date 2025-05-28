@@ -60,6 +60,9 @@ function App() {
       <Route path="/resetpassword" element={<ResetPasswordPage />} />
      <Route path="/setpassword" element={<PasswordsetPage />} />
       <Route path="/success" element={<PasswordResetSuccessPage />} />
+
+
+      <Route path="/userdashboard" element={<UserDashboard/>} />
       
       {/* Add more routes as needed */}
       

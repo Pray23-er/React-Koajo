@@ -117,8 +117,8 @@ function LoginPage() {
                 Forgot Password
               </a>
             </div>
-            <button type="submit" className="btn btn-warning btn-sm btn-block">
-              Login
+            <button type="buttton" className="btn btn-warning btn-sm btn-block">
+              <a href="/userdashboard">Login</a>
             </button>
           </form>
           <hr className="my-3" />
