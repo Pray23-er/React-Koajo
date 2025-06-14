@@ -66,7 +66,7 @@ function HeroSection() {
           alt="Hero Section Bottom Visual"
           className="img-fluid d-block mx-auto" // Responsive, center-aligned block image
           style={{
-            maxWidth: '100vw', // Max width of viewport
+           maxWidth: '100%', // Max width of viewport
             width: 'auto', // Let its natural width determine
             height: 'auto',
             display: 'block', // Ensure it behaves as a block element

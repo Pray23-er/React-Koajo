@@ -99,9 +99,11 @@ function ConnectAccountSearchPage() {
             ))}
           </div>
           <div className="d-flex justify-content-center align-items-center mt-3">
-            <p className="text-center text-gray-600 small mr-2 mb-0">Track an asset or cash account</p>
-            <a href="/setupcomplete"><button className="btn btn-primary btn-sm text-info">Complete</button></a>
+            <p className="text-center text-gray-600 small mr-2 mb-0">Track an asset or cash account</p> 
           </div>
+          <a href="/setupcomplete"><button className="btn btn-primary btn-sm"  style={{ width:300,
+            marginLeft:100
+           }}>Complete</button></a>
         </div>
       </div>
     </div>

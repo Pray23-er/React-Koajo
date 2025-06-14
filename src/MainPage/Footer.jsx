@@ -127,8 +127,8 @@ function Footer() {
       </div> {/* End of main container div */}
 
       {/* Copyright and Disclaimer Section - White Background, Black Text */}
-      <div className="bg-light text-dark py-3 text-center"> {/* White background, dark text, padding */}
-        <div className="container">
+      <div className="text-dark py-3 text-center" style={{ backgroundColor:'#f8f9fa' }}> {/* White background, dark text, padding */}
+        <div className="container" style={{ backgroundColor:'#f8f9fa' }}>
           <p className="mb-2 small">
             ©2025, Koajo. All Rights Reserved.
           </p>

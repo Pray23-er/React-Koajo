@@ -8,6 +8,7 @@ import blog3 from '../assets/blog_images/blog3.jpeg';
 import blog4 from '../assets/blog_images/blog4.png';
 import blog5 from '../assets/blog_images/blog5.jpeg';
 import blog6 from '../assets/blog_images/blog6.jpeg';
+import ScrollToTopArrow from './ScrollArrow';
 import './StylingText.css'; // Import your custom styles
 
 function BlogPage () {
@@ -117,6 +118,7 @@ function BlogPage () {
                     </div>
                 </div>
             </section>
+             <ScrollToTopArrow/>
             <Footer />
         </>
     );

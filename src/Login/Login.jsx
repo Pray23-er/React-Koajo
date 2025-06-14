@@ -117,9 +117,11 @@ function LoginPage() {
                 Forgot Password
               </a>
             </div>
-            <button type="buttton" className="btn btn-warning btn-sm btn-block">
-              <a href="/userdashboard">Login</a>
+             
+            <button type="buttton" className="btn btn-warning  text-white"  style={{ width:350 }}>
+            <a href="/userdashboard" style={{ textDecoration:"none", color: 'rgba(255, 255, 255, 0.75)',}}> Login </a>
             </button>
+           
           </form>
           <hr className="my-3" />
           <p className="text-center text-muted small mb-2">or login with</p>

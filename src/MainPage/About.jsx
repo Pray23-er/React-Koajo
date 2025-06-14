@@ -11,6 +11,7 @@ import amaAdeniyiImage from '../assets/img/ama.png'; // <--- UPDATE THIS PATH
 
 import Footer from './Footer';
 import Header from './Header';
+import ScrollToTopArrow from './ScrollArrow'; // Import your scroll arrow component
 
 // Import your image for this section
  // Adjust the path as necessary for your image
@@ -298,7 +299,7 @@ function AboutPage() {
 
 
 
-
+                 <ScrollToTopArrow/>
       <Footer />
     </>
   );

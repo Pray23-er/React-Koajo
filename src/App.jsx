@@ -22,6 +22,8 @@ import LoginPageLayout from './Login/LoginPageLayout';
 import UserDashboard from './Dashboard/UserDashboard'; // Assuming this is the layout component for the login page
 import ConnectAccountSearchPage from './CreateAccount/CompleteReg/ConnectAcoountSearchPage';
 import SetupCompletePage from './CreateAccount/CompleteReg/CompleteSetupPage';
+// Import the components for each route
+import ScrollToTop from './components/ScrollToTop'; // 
 
 
 
@@ -32,9 +34,10 @@ function App() {
   return (
     <>
     <BrowserRouter>
+    <ScrollToTop />
     
      <Routes>
-
+    
         <Route path="/" element={<LandingPage />} />
        <Route path="/about" element={<AboutPage />} />
        <Route path="/faq" element={<FAQPage />} />

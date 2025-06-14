@@ -118,7 +118,7 @@ function CreateAccountPage() {
               </div>
           
             </div>
-            <button type="submit" className="btn btn-primary btn-sm btn-block">
+          <button type="submit" className="btn btn-warning btn-sm btn-block" style={{ width:350, }}>
               Register
             </button>
           </form>

@@ -1,16 +1,15 @@
-// 
-
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import './StylingText.css';
+import './StylingText.css'; // Make sure this file is correctly linked and updated
 import loginform from '../assets/Login.png';
 import blackman from '../assets/img/frame.png';
 import Footer from './Footer';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import ChooseYourPlanSection from './ChooseYourPlanSection';
-import KoajoBenefits from './KoajoBenefits';
+import KoajoBenefits from './KoajoBenefits'; // Already updated in previous response
+import ScrollToTopArrow from './ScrollArrow';
 
 function LandingPage() {
   const podNames = ["Ajo Esusu", "Tandas", "Kye", "Susu", "Panda", "Mikado", "Poro", "Lugh", "More Pods Coming Soon"];
@@ -46,8 +45,10 @@ function LandingPage() {
       <Header />
 
       <HeroSection />
-      <div className="py-5 bg-light ">
-        <div className="container">
+
+      {/* Section: Solving Real financial Challenges */}
+      <div className="py-5 bg-light">
+        <div className="container"> {/* This ensures content is constrained */}
           {/* Section Heading */}
           <div className="text-center mb-5">
             <h2 className="mb-2">
@@ -109,90 +110,88 @@ function LandingPage() {
         </div>
       </div>
 
+      {/* Section: Explore Different Pod Types - Primary suspect for overflow */}
       <section className="py-5 bg-white text-dark text-center overflow-hidden section-slide-in">
-  <div className="container">
-    <h2 className="mb-4">Explore Different Pod Types</h2>
-    <div className="scrolling-text-container">
-      <div className="scrolling-text">
-        {podNames.map((name, index) => (
-          <span key={index} className="pod-item rounded-pill px-4 py-2 me-3" style={{ backgroundColor: '#666', color: 'white' }}>
-            {name}
-          </span>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
-
-      <section className="py-5  text-white text-center section-slide-in" style={{ backgroundColor: '#00332B' }}>
         <div className="container">
-          <h2 className="fw-bold">See How We Are  <span className="text-warning fw-bold"> Empowering Millions</span> </h2>
-          
+          <h2 className="mb-4">Explore Different Pod Types</h2>
+          {/* Ensure scrolling-text-container has overflow: hidden in CSS */}
+          <div className="scrolling-text-container">
+            <div className="scrolling-text">
+              {podNames.map((name, index) => (
+                <span key={index} className="pod-item rounded-pill px-4 py-2 me-3" style={{ backgroundColor: '#666', color: 'white' }}>
+                  {name}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-     <section className="py-5" style={{   background: 'linear-gradient(to top right, #00332B 68%, white 100%)', // Applied the requested gradient background
-      }} > {/* Black background */}
-  <div className="container text-white"> {/* Text color set to white for contrast */}
-
-    <div className="row align-items-center">
-      {/* Left: Login/Signup Form as Image */}
-      <div className="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
-        {/* Replace this with the actual path to your cropped login form image */}
-        <img
-          src={loginform}
-          alt="Login Form Mockup"
-          className="img-fluid rounded-lg shadow-lg" // Added Bootstrap classes for responsiveness and style
-          style={{ maxWidth: '450px', borderRadius: '15px' }} // Added inline style for specific rounding and max-width
-        />
-      </div>
-
-      {/* Right: Steps Guide */}
-      <div className="col-lg-6">
-        
-        <div className="d-flex flex-column gap-5 py-4">
-          {/* Step 1 */}
-          <div className="d-flex align-items-start">
-            <div className="flex-shrink-0 me-3">
-              <span className="badge bg-warning rounded-circle p-2 px-3 fw-bold fs-5">01</span> {/* Removed text-dark */}
-            </div>
-            <div>
-              <h3 className="fw-bold mb-2">Sign Up & Get Started</h3>
-              <p className=""> {/* Changed text-muted to text-white */}
-                Create your Koajo account in just a few minutes and easily verify
-                your identity to enjoy seamless access to all features and services.
-              </p>
-              <p className="small">No hassle, no sign-up fees.</p> {/* Changed text-muted to text-white */}
-            </div>
-          </div>
-
-          {/* Step 2 */}
-          <div className="d-flex align-items-start">
-            <div className="flex-shrink-0 me-3">
-              <span className="badge bg-warning rounded-circle p-2 px-3 fw-bold fs-5">02</span> {/* Removed text-dark */}
-            </div>
-            <div>
-              <h3 className="fw-bold mb-2">Choose or Create a Pod</h3>
-              <p className=""> {/* Changed text-muted to text-white */}
-                Join a savings pod that fits your saving & financial goals or start
-                your own with people you trust. Each pod runs for 12 weeks at a
-                time, giving you short term access to the Lumpsum.
-              </p>
-            </div>
-          </div>
-
-          {/* Steps 3 and 4 */}
-       
+      {/* Section: Empowering Millions */}
+      <section className="py-5 text-white text-center section-slide-in" style={{ backgroundColor: '#00332B' }}>
+        <div className="container"> {/* This ensures content is constrained */}
+          <h2 className="fw-bold">See How We Are <span className="text-warning fw-bold"> Empowering Millions</span> </h2>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
+      {/* Section: Sign Up Steps */}
+      <section className="py-5" style={{ background: 'linear-gradient(to top right, #00332B 78%, gray 100%)' }}>
+        <div className="container text-white"> {/* This ensures content is constrained */}
+          <div className="row align-items-center">
+            {/* Left: Login/Signup Form as Image */}
+            <div className="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
+              <img
+                src={loginform}
+                alt="Login Form Mockup"
+                className="img-fluid rounded-lg shadow-lg"
+                style={{ maxWidth: '450px', borderRadius: '15px' }}
+              />
+            </div>
 
-            <KoajoBenefits/>
-    
-     <ChooseYourPlanSection />
+            {/* Right: Steps Guide */}
+            <div className="col-lg-6">
+              <div className="d-flex flex-column gap-5 py-4">
+                {/* Step 1 */}
+                <div className="d-flex align-items-start">
+                  <div className="flex-shrink-0 me-3">
+                    <span className="badge bg-warning rounded-circle p-2 px-3 fw-bold fs-5">01</span>
+                  </div>
+                  <div>
+                    <h3 className="fw-bold mb-2">Sign Up & Get Started</h3>
+                    <p className="">
+                      Create your Koajo account in just a few minutes and easily verify
+                      your identity to enjoy seamless access to all features and services.
+                    </p>
+                    <p className="small">No hassle, no sign-up fees.</p>
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="d-flex align-items-start">
+                  <div className="flex-shrink-0 me-3">
+                    <span className="badge bg-warning rounded-circle p-2 px-3 fw-bold fs-5">02</span>
+                  </div>
+                  <div>
+                    <h3 className="fw-bold mb-2">Choose or Create a Pod</h3>
+                    <p className="">
+                      Join a savings pod that fits your saving & financial goals or start
+                      your own with people you trust. Each pod runs for 12 weeks at a
+                      time, giving you short term access to the Lumpsum.
+                    </p>
+                  </div>
+                </div>
+                {/* Steps 3 and 4 should be here if they exist, otherwise remove placeholder comment */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* KoajoBenefits component handles its own internal layout */}
+      <KoajoBenefits />
+
+      <ChooseYourPlanSection />
+      <ScrollToTopArrow />
 
       <Footer />
     </>

@@ -49,13 +49,13 @@ function StripeKYCConfirmationPage() {
             </ul>
             <a href="#" className="text-info small text-decoration-underline mb-3">Stripe Privacy Policy · English (United States)</a>
             <a href="/kyc">
-            <button className="btn btn-warning btn-sm btn-block mb-2">
+            <button className="btn btn-warning btn-sm btn-block mb-2" style={{ width:400 }}>
               Agree and Continue <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right ml-2" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M1 8a.5.5 0 0 0 .5.5h11.793l-3.146 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 7.5H1.5a.5.5 0 0 0-.5.5z"/>
               </svg>
             </button>
             </a>
-            <button className="btn btn-outline-secondary btn-sm btn-block">
+            <button className="btn btn-danger btn-sm btn-block" style={{ width:400 }}>
               Decline
             </button>
           </div>

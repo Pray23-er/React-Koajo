@@ -5,7 +5,7 @@ import Footer from './Footer';
 //import { Link } from 'react-router-dom';
 import './StylingText.css';
 import faqimage from '../assets/fine girl.png'; // Import your image here
-
+import ScrollToTopArrow from './ScrollArrow';
 
 // Custom Hook for animation (defined here for simplicity, ideally in a separate file)
 const useElementOnScreen = (options) => {
@@ -204,7 +204,7 @@ const FAQPage = () => {
                 <h2 className="display-5 fw-bold mb-3" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}> {/* Applied to heading */}
                     How Can We <span style={{ color: '#ff8c42' }}>Help You?</span>
                 </h2>
-                <p className="lead mx-auto" style={{ maxWidth: '700px', color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}> {/* Applied to paragraph */}
+                <p className="lead mx-auto" style={{ maxWidth: '700px', color: 'black', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}> {/* Applied to paragraph */}
                     Explore our comprehensive support resources and guides to find the answers you need.
                 </p>
                 </div>
@@ -355,21 +355,21 @@ const FAQPage = () => {
             />
           </div>
 
-          {/* Right Column: Text Content (MOVED TO RIGHT) */}
-          <div className="col-lg-6">
-            <h2 className="display-5 fw-bold mb-4" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-              Team Up In Help Center To Smoothly Resolve Every Case
-            </h2>
-            <p className="lead mb-4" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-              Lorem ipsum dolor sit amet consectetur. Morbi urna id vitae eu pulvinar Amet ultrices est dolor lorem. Porttitor placerat sed enim mauris cursus condimentum ornare nullam dui. Ut accumsan etiam mus egestas nulla sed. In hac morbi nisl bibendum leo porttitor. Mattis consectetur imperdiet arcu nunc purus augue.
-            </p>
-            <h5 className="fw-bold mb-3" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-              Bright Solutions. Profitable Results
-            </h5>
-            <p className="mb-0" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
-              Lorem ipsum dolor sit amet consectetur. Morbi urna id vitae eu pulvinar Amet ultrices est dolor lorem. Porttitor placerat sed enim mauris cursus condimentum ornare nullam dui. Ut accumsan etiam mus egestas nulla sed. In hac morbi nisi bibendum leo porttitor. Mattis consectetur imperdiet arcu nunc purus augue.
-            </p>
-          </div>
+  {/* Right Column: Text Content */}
+        <div className="col-lg-6">
+        <h2 className="display-5 fw-bold mb-4" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+            Your Financial Journey, Supported Every Step of the Way
+        </h2>
+        <p className="lead mb-4" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+            At Koajo, we believe in **uninterrupted financial progress** and peace of mind. Our dedicated support team is here to ensure your experience is smooth and hassle-free. From quick questions to technical assistance, we're committed to providing timely and effective solutions, so you can focus on achieving your savings goals without a hitch.
+        </p>
+        <h5 className="fw-bold mb-3" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+            Dedicated to Your Success
+        </h5>
+        <p className="mb-0" style={{ color: '#000000', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+            We're not just a platform; we're your partner in building financial stability. Our support goes beyond troubleshooting – we're here to help you understand every aspect of Koajo, maximize your benefits, and resolve any concerns with clarity and efficiency. Your financial well-being is our top priority.
+        </p>
+        </div>
         </div>
       </div>
     </section>
@@ -475,7 +475,7 @@ const FAQPage = () => {
                     </button>
                 </div>
             </section>
-
+            <ScrollToTopArrow />
             <Footer/>
         </>
     );
