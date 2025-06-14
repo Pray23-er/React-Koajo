@@ -67,7 +67,8 @@ function Email() {
             </svg>
             Please enter the verification code
           </p>
-          <button className="btn btn-warning  btn-block" onClick={handleLogin} disabled={code.some(c => c === '')} style={{ width:400 }}>
+          <button className="btn btn-warning  btn-block" onClick={handleLogin} disabled={code.some(c => c === '')} style={{ width:200,
+            marginLeft:100 }}>
             Submit
           </button>
           <p className="mt-3 text-center text-gray-600 small">

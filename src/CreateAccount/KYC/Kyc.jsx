@@ -32,7 +32,8 @@ function KYCPage() {
             </p>
           </div>
           <a href="/MobileVerification">
-          <button className="btn btn-warning btn-sm btn-block" style={{ width:330 }}>
+          <button className="btn btn-warning btn-sm btn-block" style={{width:200,
+            marginLeft:50 }}>
             Verify me
           </button>
           </a>

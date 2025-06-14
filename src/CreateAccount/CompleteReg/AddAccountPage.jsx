@@ -24,7 +24,8 @@ function AddAccountsPage() {
             <h2 className="h5 font-weight-bold text-gray-900 text-center mb-2">Add accounts to see all your finances in one place</h2>
             <p className="text-gray-600 text-center small mb-3">Track multiple account types including bank accounts, investments, and more.</p>
             <a href="/connectaccount">
-            <button className="btn btn-warning btn-sm btn-block mb-2" style={{ width:300 }}>
+            <button className="btn btn-warning btn-sm btn-block mb-2" style={{width:200,
+            }}>
               Add Account
             </button>
             </a>
