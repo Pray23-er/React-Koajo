@@ -118,7 +118,8 @@ function LoginPage() {
               </a>
             </div>
              
-            <button type="buttton" className="btn btn-warning  text-white"  style={{ width:350 }}>
+            <button type="buttton" className="btn btn-warning  text-white"  style={{ width:200,
+            marginLeft:50 }}>
             <a href="/userdashboard" style={{ textDecoration:"none", color: 'rgba(255, 255, 255, 0.75)',}}> Login </a>
             </button>
            
