@@ -24,6 +24,12 @@ import ConnectAccountSearchPage from './CreateAccount/CompleteReg/ConnectAcoount
 import SetupCompletePage from './CreateAccount/CompleteReg/CompleteSetupPage';
 // Import the components for each route
 import ScrollToTop from './components/ScrollToTop'; // 
+import ChoosePodPage from './Dashboard/Pop ups/ChoosePodPage';
+import PodTrackingGoalPage2 from './Dashboard/Pop ups/PodTrackingGoalPage';
+import TransactionDashboard from './Dashboard/TransactionOverview';
+import PodOverview from './Dashboard/PodOverview';
+import NotificationPage from './Dashboard/NotificationPage';
+import UserDashboardHeader from './Dashboard/UserDashboardHeader';
 
 
 
@@ -66,6 +72,8 @@ function App() {
 
 
       <Route path="/userdashboard" element={<UserDashboard/>} />
+       <Route path="/Transaction" element={<TransactionDashboard/>} />
+        <Route path="/Podoverview" element={<PodOverview/>} />
       
       {/* Add more routes as needed */}
       
@@ -73,6 +81,8 @@ function App() {
      </Routes>
 
    </BrowserRouter>
+
+
     
     </>
     

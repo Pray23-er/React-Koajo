@@ -4,11 +4,14 @@ import { AiOutlineQuestionCircle, AiOutlineRight, AiOutlineSearch, AiOutlineBell
 import { FaCalendarAlt } from 'react-icons/fa'; // For calendar icon
 import { BsCheckCircleFill, BsLightningFill, BsCashCoin, BsAwardFill, BsHeartFill } from 'react-icons/bs'; // For specific achievement icons
 
+// Import the UserDashboardHeader component
+import UserDashboardHeader from './UserDashboardHeader'; // Adjust the path if your component is in a different directory (e.g., './components/UserDashboardHeader')
+
 
 // Placeholder for images (replace with actual paths or data URLs)
-const koajoLogoDark = "https://placehold.co/100x50/FFFFFF/000000?text=Koajo"; // Logo for dark background
-const koajoLogoLight = "https://placehold.co/100x50/000000/FFFFFF?text=Koajo"; // Logo for light background
-const userProfilePic = "https://placehold.co/30x30/cccccc/000000?text=JD"; // Placeholder for user profile pic
+const koajoLogoDark = "https://placehold.co/100x50/FFFFFF/000000?text=Koajo"; // Logo for dark background - Note: not used in this file directly
+const koajoLogoLight = "https://placehold.co/100x50/000000/FFFFFF?text=Koajo"; // Logo for light background - Note: not used in this file directly
+const userProfilePic = "https://placehold.co/30x30/cccccc/000000?text=JD"; // Placeholder for user profile pic - Note: used in UserDashboardHeader
 const userAvatar = "https://placehold.co/40x40/ddd/000?text=U"; // Placeholder for group member avatars
 
 
@@ -323,19 +326,27 @@ function UserDashboard() {
   };
 
   return (
-    <div className="d-flex flex-column min-vh-100 bg-dark text-light">
+    // Outer container for the entire dashboard layout
+    // Set background to #f0f2f5 for the main content area (dashboard background)
+    // The header itself will have its own dark background from UserDashboardHeader.
+    <div className="d-flex flex-column min-vh-100" style={{ backgroundColor: '#f0f2f5' }}>
 
+      {/* Render the UserDashboardHeader component here */}
+      <UserDashboardHeader />
 
-      {/* Main Content Area */}
+      {/* Main Content Area (below the header) */}
       <div className="flex-grow-1 p-4 container-fluid"> {/* Use container-fluid for full width */}
         {/* Top Section: Welcome and Breadcrumbs */}
         <div className="d-flex justify-content-between align-items-center mb-4">
           <div>
-            <h1 className="h4 fw-bold">Welcome back, Rainer Yaeger 👋</h1>
+            <h1 className="h4 fw-bold text-dark">Welcome back, Rainer Yaeger 👋</h1> {/* Changed text to dark for visibility on light background */}
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb bg-transparent mb-0 small">
-                <li className="breadcrumb-item text-secondary">Dashboard</li>
-                <li className="breadcrumb-item text-white active" aria-current="page">Overview</li>
+                <li className="breadcrumb-item"><a href="#" className="text-secondary text-decoration-none">Dashboard</a></li>
+                <li className="breadcrumb-item text-muted active" aria-current="page">
+                  {/* Dynamically display active tab in breadcrumb */}
+                  {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
+                </li>
               </ol>
             </nav>
           </div>
@@ -346,30 +357,33 @@ function UserDashboard() {
         </div>
 
         {/* Tabs Navigation */}
-        <ul className="nav nav-tabs border-0 mb-4 bg-secondary rounded">
+        <ul className="nav nav-tabs border-0 mb-4 rounded-pill overflow-hidden shadow-sm" style={{ backgroundColor: '#e9ecef' }}> {/* Light grey background for tabs */}
           <li className="nav-item">
             <a
-              className={`nav-link border-0 rounded-start ${activeTab === 'overview' ? 'active bg-dark text-warning' : 'text-light'}`}
+              className={`nav-link border-0 ${activeTab === 'overview' ? 'active text-warning fw-bold' : 'text-dark'}`}
+              style={{ backgroundColor: activeTab === 'overview' ? '#343a40' : 'transparent', borderRadius: '50rem' }} // Dark background for active tab
               href="#"
-              onClick={() => setActiveTab('overview')} // Update state on click
+              onClick={(e) => { e.preventDefault(); setActiveTab('overview'); }}
             >
               Overview
             </a>
           </li>
           <li className="nav-item">
             <a
-              className={`nav-link border-0 ${activeTab === 'transaction' ? 'active bg-dark text-warning' : 'text-light'}`}
+              className={`nav-link border-0 ${activeTab === 'transaction' ? 'active text-warning fw-bold' : 'text-dark'}`}
+              style={{ backgroundColor: activeTab === 'transaction' ? '#343a40' : 'transparent', borderRadius: '50rem' }}
               href="#"
-              onClick={() => setActiveTab('transaction')} // Update state on click
+              onClick={(e) => { e.preventDefault(); setActiveTab('transaction'); }}
             >
               Transaction
             </a>
           </li>
           <li className="nav-item">
             <a
-              className={`nav-link border-0 rounded-end ${activeTab === 'podInformation' ? 'active bg-dark text-warning' : 'text-light'}`}
+              className={`nav-link border-0 ${activeTab === 'podInformation' ? 'active text-warning fw-bold' : 'text-dark'}`}
+              style={{ backgroundColor: activeTab === 'podInformation' ? '#343a40' : 'transparent', borderRadius: '50rem' }}
               href="#"
-              onClick={() => setActiveTab('podInformation')} // Update state on click
+              onClick={(e) => { e.preventDefault(); setActiveTab('podInformation'); }}
             >
               Pod Information
             </a>
@@ -380,7 +394,6 @@ function UserDashboard() {
         {renderTabContent()}
 
       </div>
-
     </div>
   );
 }
