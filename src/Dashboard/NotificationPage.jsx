@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css'; // Assuming Font Awesome is installed
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import UserDashboardHeader from './UserDashboardHeader'; // Assuming Font Awesome is installed
 
 function NotificationPage() {
   const notifications = [
@@ -17,39 +18,8 @@ function NotificationPage() {
 
   return (
     <div style={{ backgroundColor: '#f0f2f5', minHeight: '100vh' }}>
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div className="container-fluid mx-5">
-          <a className="navbar-brand fw-bold fs-4" href="#" style={{ color: '#5a5c69' }}>Koajo</a>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#" style={{ color: '#5a5c69' }}>Dashboard</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#" style={{ color: '#5a5c69' }}>Settings</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#" style={{ color: '#5a5c69' }}>Help & Center</a>
-              </li>
-            </ul>
-            <div className="d-flex align-items-center">
-              <div className="input-group me-3">
-                <span className="input-group-text bg-transparent border-0 pe-0">
-                  <i className="fas fa-search" style={{ color: '#5a5c69' }}></i>
-                </span>
-                <input type="text" className="form-control border-0 ps-1" placeholder="Search anything here" aria-label="Search" style={{ boxShadow: 'none' }} />
-              </div>
-              <a href="#" className="text-decoration-none me-3">
-                <i className="fas fa-bell fs-5" style={{ color: '#5a5c69' }}></i>
-              </a>
-              <a href="#" className="text-decoration-none">
-                <img src="https://via.placeholder.com/30" alt="User" className="rounded-circle" /> {/* Placeholder for user image */}
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <UserDashboardHeader/>
+      
 
       {/* Main Content */}
       <div className="container-fluid mt-4 px-5">

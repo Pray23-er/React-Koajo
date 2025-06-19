@@ -74,9 +74,11 @@ function ChoosePodPage() {
             <div className="modal-header border-0 pb-0 d-flex justify-content-between align-items-center">
               <button type="button" className="btn btn-link text-dark p-0" aria-label="Back">
                 {/* BsArrowLeft icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+                <a href="/userdashboard">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
                   <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5a.5.5 0 0 0 .5-.5z"/>
-                </svg>
+                </svg> 
+                </a>
               </button>
               <h5 className="modal-title fw-bold text-dark text-center flex-grow-1">Choose Pod</h5>
               <button type="button" className="btn btn-link text-secondary text-decoration-none p-0">
@@ -122,6 +124,7 @@ function ChoosePodPage() {
 
             {/* Modal Footer */}
             <div className="modal-footer border-0 pt-0 d-flex justify-content-end">
+              <a href="/podtracking">
               <button type="button" className="btn btn-warning fw-bold rounded-pill px-4 py-2">
                 Next <span className="ms-2" style={{ transform: 'rotate(180deg)', display: 'inline-block' }}>
                   {/* BsArrowLeft icon rotated */}
@@ -130,6 +133,7 @@ function ChoosePodPage() {
                   </svg>
                 </span>
               </button>
+              </a>
             </div>
           </div>
         </div>

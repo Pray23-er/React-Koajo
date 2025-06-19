@@ -1,10 +1,9 @@
-
-
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AiOutlineSearch, AiOutlineBell } from 'react-icons/ai'; // For icons
 import { FaCalendarAlt } from 'react-icons/fa'; // For calendar icon
 import UserDashboardHeader from './UserDashboardHeader'; // Import your existing header component
+import ExportModal from './ExportModal'; // <--- Import the ExportModal component
 
 // Inline SVGs for icons used in the dashboard table and buttons
 const FilterIcon = () => (
@@ -26,13 +25,15 @@ const DotsVerticalIcon = () => (
     </svg>
 );
 
-// Placeholder for images
-const koajoLogoDark = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAYAAACg/u2AAAAACXBIWXMAAA7DAAAOwwHHB6VQAAADxklEQVR4nO2by0tUURjGn+1rM8u+M2hDRESEKqFfB/0B/QUVNElJc22WkR8gqUeQIEHQQ0FBd7SJoAgR1EShQoGgljA4JjPDzM7Zl7Xn8f6Hczg/Lp2Z5z/n/s59ztnnnHvucw7bEUKICfAB9AJbwDqwC/wFPAI+J0fO6wNtwBJwG1gFLgEXgI+z67e/fS4nPgFmgaM0j+rV2e4qXgY+AT4Hjgc/a21kCzhsB6xVn3qS/VwGvgIuA+/j7vM3uV4x/gN+A34BvgCuAB/E3Vd4BtgNnAL+z2t+yJzP9c4s/Q7oR47i/Urg4uO/gBtgfWc92XmC611Z+h01d3BvAReBL4Avgl+BPwDfgQ/Z9QW2AGuA68C+gDtgK1gCLgI7O6t/d5e/v0pB+VwDvgP+AV4BHgFvAnOBz19lDrgC1gBnA/sDugJdgb3A9k7L068yJ0fBvH4eAR4BHhXu5m+zXm75P3D4eT4APvI5+30Vl6V3Wf97XgO/cZ7H32oE5W0xN/cK2eS5+222wNtgXg4/A/vB9c7e+z1W0k/Z9XbLgGbgN+wE3gCuALeBy18rDrgDWAa8D+wP6AruBe4HPn+Jc0eUvKUE9fAR4BHhEeFu/tK+Q0r4H+D+AP2rYx4C6V9lFfQ+wH9jFm+yivkNK+x/g/+A/gK62JgB22kE1+gG8+Bdg1z3gK5S3pQz18BfgEXCj3Nkv5TivpP8f/wJ8BfC1eQDAbjsA8DDAj/cAn2eAbgeU9d8f8BLweQbgLzsAYLDvDxgG/n0A1z4C8O2B+wAPAD8A/gB+AvwF8AtgDdgAnAFOAFcAPwBfAN8AvwA/APgDAPwBfAP8vj1XAE/dARy6AHwEvAG4C8Dr3wP/nJz7E/AA+A34DfgF+AvwF+AvwF+A34C/v9b6V1y2B266v7wG/gLchcAV/0H/b5f+gBvgDHgL+A34DfgF+AvwF+AvwF+A34C/v9a6X/G4AjjqDsAVwBfAN8AvwF+A34C/AHYBHgG3AGuA14BfgC/AE8DPAf8313yV/0m6qgD+AfgD8AfwD/AP4B/APwB/APwB/AP4B/AP4B/B30WADtsDAPgA+A34DfgF+AvwF+AvwF+A34C/v9e728i/K0C/A/wD8AfwD/AP4B/APwB/APwB/APwB/AP4B+BPg+BfH6gD/AP4B/APwB/APwB/APwB/APwB/APwB/APwB/Bv8WABt3X1v8APgD4A/gD4A/gD4A/gD4A/gD4A/gD4A/gD4A/gf4M/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/D/0wBjwF/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/A/0wD2/o/f/9t/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/D/0wAAAABJRU5ErkJggg=='; // Placeholder for dark background"
-const koajoLogoLight = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAYAAACg/u2AAAAACXBIWXMAA7DAAAOwwHHB6VQAAADxklEQVRYnO2by0tUUXjGn+1rM8u+M2hDRESEKqFfB/0B/QUVNElJc22WkR8gqUeQIEHQQ0FBd7SJoAgR1EShQoGgljA4JjPDzM7Zl7Xn8f6Hczg/Lp2Z5z/n/s59ztnnnHvucw7bEUKICfAB9AJbwDqwC/wFPAI+J0fO6wNtwBJwG1gFLgEXgI+z67e/fS4nPgFmgaM0j+rV2e4qXgY+AT4Hjgc/a21kCzhsB6xVn3qS/VwGvgIuA+/j7vM3uV4x/gN+A34BvgCuAB/E3Vd4BtgNnAL+z2t+yJzP9c4s/Q7oR47i/Urg4uO/gBtgfWc92XmC611Z+h01d3BvAReBL4Avgl+BPwDfgQ/Z9QW2AGuA68C+gDtgK1gCLgI7O6t/d5e/v0pB+VwDvgP+AV4BHgFvAnOBz19lDrgC1gBnA/sDugJdgb3A9k7L068yJ0fBvH4eAR4BHhXu5m+zXm75P3D4eT4APvI5+30Vl6V3Wf97XgO/cZ7H32oE5W0xN/cK2eS5+222wNtgXg4/A/vB9c7e+z1W0k/Z9XbLgGbgN+wE3gCuALeBy18rDrgDWAa8D+wP6AruBe4HPn+Jc0eUvKUE9fAR4BHhEeFu/tK+Q0r4H+D+AP2rYx4C6V9lFfQ+wH9jFm+yivkNK+x/g/+A/gK62JgB22kE1+gG8+Bdg1z3gK5S3pQz18BfgEXCj3Nkv5TivpP8f/wJ8BfC1eQDAbjsA8DDAj/cAn2eAbgeU9d8f8BLweQbgLzsAYLDvDxgG/n0A1z4C8O2B+wAPAD8A/gB+AvwF8AtgDdgAnAFOAFcAPwBfAN8AvwA/APgDAPwBfAP8vj1XAE/dARy6AHwEvAG4C8Dr3wP/nJz7E/AA+A34DfgF+AvwF+AvwF+A34C/v9b6V1y2B266v7wG/gLchcAV/0H/b5f+gBvgDHgL+A34DfgF+AvwF+AvwF+A34C/v9a6X/G4AjjqDsAVwBfAN8AvwF+A34C/AHYBHgG3AGuA14BfgC/AE8DPAf8313yV/0m6qgD+AfgD8AfwD/AP4B/APwB/APwB/AP4B/AP4B/B30WADtsDAPgA+A34DfgF+AvwF+AvwF+A34C/v9e728i/K0C/A/wD8AfwD/AP4B/APwB/APwB/APwB/AP4B+BPg+BfH6gD/AP4B/APwB/APwB/APwB/APwB/APwB/APwB/Bv8WABt3X1v8APgD4A/gD4A/gD4A/gD4A/gD4A/gD4A/gD4A/gf4M/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/D/0wBjwF/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/A/0wD2/o/f/9t/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/D/0wAAAABJRU5ErkJggg=="; // Logo for light background
+// Placeholder for images (Keep these if you're using them elsewhere, otherwise remove)
+const koajoLogoDark = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAYAAACg/u2AAAAACXBIWXMAAA7DAAAOwwHHB6VQAAADxklEQ4nO2by0tUURjGn+1rM8u+M2hDRESEKqFfB/0B/QUVNElJc22WkR8gqUeQIEHQQ0FBd7SJoAgR1EShQoGgljA4JjPDzM7Zl7Xn8f6Hczg/Lp2Z5z/n/s59ztnnnHvucw7bEUKICfAB9AJbwDqwC/wFPAI+J0fO6wNtwBJwG1gFLgEXgI+z67e/fS4nPgFmgaM0j+rV2e4qXgY+AT4Hjgc/a21kCzhsB6xVn3qS/VwGvgIuA+/j7vM3uV4x/gN+A34BvgCuAB/E3Vd4BtgNnAL+z2t+yJzP9c4s/Q7oR47i/Urg4uO/gBtgfWc92XmC611Z+h01d3BvAReBL4Avgl+BPwDfgQ/Z9QW2AGuA68C+gDtgK1gCLgI7O6t/d5e/v0pB+VwDvgP+AV4BHgFvAnOBz19lDrgC1gBnA/sDugJdgb3A9k7L068yJ0fBvH4eAR4BHhXu5m+zXm75P3D4eT4APvI5+30Vl6V3Wf97XgO/cZ7H32oE5W0xN/cK2eS5+222wNtgXg4/A/vB9c7e+z1W0k/Z9XbLgGbgN+wE3gCuALeBy18rDrgDWAa8D+wP6AruBe4HPn+Jc0eUvKUE9fAR4BHhEeFu/tK+Q0r4H+D+AP2rYx4C6V9lFfQ+wH9jFm+yivkNK+x/g/+A/gK62JgB22kE1+gG8+Bdg1z3gK5S3pQz18BfgEXCj3Nkv5TivpP8f/wJ8BfC1eQDAbjsA8DDAj/cAn2eAbgeU9d8f8BLweQbgLzsAYLDvDxgG/n0A1z4C8O2B+wAPAD8A/gB+AvwF8AtgDdgAnAFOAFcAPwBfAN8AvwB/APgDAPwBfAP8vj1XAE/dARy6AHwEvAG4C8Dr3wP/nJz7E/AA+A34DfgF+AvwF+AvwF+A34C/v9b6V1y2B266v7wG/gLchcAV/0H/b5f+gBvgDHgL+A34DfgF+AvwF+AvwF+A34C/v9a6X/G4AjjqDsAVwBfAN8AvwF+A34C/AHYBHgG3AGuA14BfgC/AE8DPAf8313yV/0m6qgD+AfgD8AfwD/AP4B/APwB/APwB/APwB/AP4B/B30WADtsDAPgA+A34DfgF+AvwF+AvwF+A34C/v9e728i/K0C/A/wD8AfwD/AP4B/APwB/APwB/APwB/AP4B+BPg+BfH6gD/AP4B/APwB/APwB/APwB/APwB/APwB/APwB/Bv8WABt3X1v8APgD4A/gD4A/gD4A/gD4A/gD4A/gD4A/gD4A/gf4M/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/D/0wBjwF/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/A/0wD2/o/f/9t/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/D/0wAAAABJRU5ErkJggg=="; // Placeholder for dark background"
+const koajoLogoLight = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAYAAACg/u2AAAAACXBIWXMAA7DAAAOwwHHB6VQAAADxklEQVRYnO2by0tUUXjGn+1rM8u+M2hDRESEKqFfB/0B/QUVNElJc22WkR8gqUeQIEHQQ0FBd7SJoAgR1EShQoGgljA4JjPDzM7Zl7Xn8f6Hczg/Lp2Z5z/n/s59ztnnnHvucw7bEUKICfAB9AJbwDqwC/wFPAI+J0fO6wNtwBJwG1gFLgEXgI+z67e/fS4nPgFmgaM0j+rV2e4qXgY+AT4Hjgc/a21kCzhsB6xVn3qS/VwGvgIuA+/j7vM3uV4x/gN+A34BvgCuAB/E3Vd4BtgNnAL+z2t+yJzP9c4s/Q7oR47i/Urg4uO/gBtgfWc92XmC611Z+h01d3BvAReBL4Avgl+BPwDfgQ/Z9QW2AGuA68C+gDtgK1gCLgI7O6t/d5e/v0pB+VwDvgP+AV4BHgFvAnOBz19lDrgC1gBnA/sDugJdgb3A9k7L068yJ0fBvH4eAR4BHhXu5m+zXm75P3D4eT4APvI5+30Vl6V3Wf97XgO/cZ7H32oE5W0xN/cK2eS5+222wNtgXg4/A/vB9c7e+z1W0k/Z9XbLgGbgN+wE3gCuALeBy18rDrgDWAa8D+wP6AruBe4HPn+Jc0eUvKUE9fAR4BHhEeFu/tK+Q0r4H+D+AP2rYx4C6V9lFfQ+wH9jFm+yivkNK+x/g/+A/gK62JgB22kE1+gG8+Bdg1z3gK5S3pQz18BfgEXCj3Nkv5TivpP8f/wJ8BfC1eQDAbjsA8DDAj/cAn2eAbgeU9d8f8BLweQbgLzsAYLDvDxgG/n0A1z4C8O2B+wAPAD8A/gB+AvwF8AtgDdgAnAFOAFcAPwBfAN8AvwB/APgDAPwBfAP8vj1XAE/dARy6AHwEvAG4C8Dr3wP/nJz7E/AA+A34DfgF+AvwF+AvwF+A34C/v9b6V1y2B266v7wG/gLchcAV/0H/b5f+gBvgDHgL+A34DfgF+AvwF+AvwF+A34C/v9a6X/G4AjjqDsAVwBfAN8AvwF+A34C/AHYBHgG3AGuA14BfgC/AE8DPAf8313yV/0m6qgD+AfgD8AfwD/AP4B/APwB/APwB/APwB/AP4B/B30WADtsDAPgA+A34DfgF+AvwF+AvwF+A34C/v9e728i/K0C/A/wD8AfwD/AP4B/APwB/APwB/APwB/AP4B+BPg+BfH6gD/AP4B/APwB/APwB/APwB/APwB/APwB/APwB/Bv8WABt3X1v8APgD4A/gD4A/gD4A/gD4A/gD4A/gD4A/gD4A/gf4M/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/D/0wBjwF/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/A/0wD2/o/f/9t/APwB/APwB/APwB/APwB/APwB/APwB/APwB/APwB/D/0wAAAABJRU5ErkJggg=="; // Logo for light background
 const userProfilePic = "https://placehold.co/30x30/cccccc/000000?text=JD"; // Placeholder for user profile pic
 const userAvatar = "https://placehold.co/40x40/ddd/000?text=U"; // Placeholder for group member avatars
 
 function TransactionDashboard() {
+  const [showExportModal, setShowExportModal] = useState(false); // State to control modal visibility
+
   const transactions = [
     {
       invoice: 'BUBU2928999',
@@ -86,15 +87,9 @@ function TransactionDashboard() {
 
   return (
     <div className="d-flex flex-column min-vh-100 bg-dark text-light">
-      {/* Assuming UserDashboardHeader.jsx is in the same directory, import it like this: */}
-      {/* import UserDashboardHeader from './UserDashboardHeader'; */}
-      {/* And then use it here: */}
       <UserDashboardHeader /> {/* This is where you'd use your UserDashboardHeader */}
 
-      {/* Main Content Area */}
-   
-
-       
+      <div className="container-fluid flex-grow-1 p-4">
 
         {/* Search, Filter, Export Section */}
         <div className="d-flex justify-content-between align-items-center mb-4">
@@ -113,7 +108,10 @@ function TransactionDashboard() {
             <button className="btn btn-outline-secondary d-flex align-items-center gap-2">
               <FilterIcon /> Filter
             </button>
-            <button className="btn btn-outline-secondary d-flex align-items-center gap-2">
+            <button
+              className="btn btn-outline-secondary d-flex align-items-center gap-2"
+              onClick={() => setShowExportModal(true)} // <--- This button will open the modal
+            >
               <ExportIcon /> Export
             </button>
           </div>
@@ -145,7 +143,7 @@ function TransactionDashboard() {
                         transaction.status === 'Success' ? 'bg-success' :
                         transaction.status === 'pending' ? 'bg-warning text-dark' :
                         'bg-danger'
-                      } bg-opacity-10 py-2 px-3 rounded-pill text-uppercase`}> {/* Adjusted badge styling */}
+                      } bg-opacity-10 py-2 px-3 rounded-pill text-uppercase`}>
                         {transaction.status}
                       </span>
                     </td>
@@ -192,7 +190,22 @@ function TransactionDashboard() {
           </div>
         </div>
       </div>
-    
+
+      {/* Render the ExportModal conditionally */}
+      {showExportModal && (
+        <div className="modal-backdrop fade show"></div>
+      )}
+      {showExportModal && (
+        <div className="modal" style={{ display: 'block' }} tabIndex="-1" role="dialog">
+          <div className="modal-dialog modal-dialog-centered" role="document">
+            {/* THIS IS THE CRUCIAL CHANGE: WRAPPING ExportModal IN modal-content */}
+            <div className="modal-content">
+              <ExportModal onClose={() => setShowExportModal(false)} />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 

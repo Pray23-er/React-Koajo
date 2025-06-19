@@ -34,7 +34,7 @@ function UserDashboard() {
                   <AiOutlineQuestionCircle size={20} className="text-muted" />
                 </div>
                 <p className="fw-bold fs-3 mb-3">$100 Pod</p>
-                <button className="btn btn-warning fw-bold py-2 px-4 rounded-pill">Join More Pods</button>
+                <a href="/choosepod"><button className="btn btn-warning fw-bold py-2 px-4 rounded-pill">Join More Pods</button></a>
               </div>
             </div>
 
@@ -339,7 +339,7 @@ function UserDashboard() {
         {/* Top Section: Welcome and Breadcrumbs */}
         <div className="d-flex justify-content-between align-items-center mb-4">
           <div>
-            <h1 className="h4 fw-bold text-dark">Welcome back, Rainer Yaeger 👋</h1> {/* Changed text to dark for visibility on light background */}
+        
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb bg-transparent mb-0 small">
                 <li className="breadcrumb-item"><a href="#" className="text-secondary text-decoration-none">Dashboard</a></li>
@@ -350,10 +350,7 @@ function UserDashboard() {
               </ol>
             </nav>
           </div>
-          <div className="d-flex align-items-center bg-secondary rounded-pill px-3 py-2 text-warning fw-bold">
-            <FaCalendarAlt className="me-2" />
-            <span>Mar 17</span>
-          </div>
+         
         </div>
 
         {/* Tabs Navigation */}
@@ -368,27 +365,7 @@ function UserDashboard() {
               Overview
             </a>
           </li>
-          <li className="nav-item">
-            <a
-              className={`nav-link border-0 ${activeTab === 'transaction' ? 'active text-warning fw-bold' : 'text-dark'}`}
-              style={{ backgroundColor: activeTab === 'transaction' ? '#343a40' : 'transparent', borderRadius: '50rem' }}
-              href="#"
-              onClick={(e) => { e.preventDefault(); setActiveTab('transaction'); }}
-            >
-              Transaction
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className={`nav-link border-0 ${activeTab === 'podInformation' ? 'active text-warning fw-bold' : 'text-dark'}`}
-              style={{ backgroundColor: activeTab === 'podInformation' ? '#343a40' : 'transparent', borderRadius: '50rem' }}
-              href="#"
-              onClick={(e) => { e.preventDefault(); setActiveTab('podInformation'); }}
-            >
-              Pod Information
-            </a>
-          </li>
-        </ul>
+          </ul>
 
         {/* Render content based on activeTab state */}
         {renderTabContent()}
