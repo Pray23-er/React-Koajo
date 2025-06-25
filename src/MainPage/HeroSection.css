@@ -1,0 +1,129 @@
+/* ===== Hero Section Background ===== */
+.hero-section-background {
+  background: linear-gradient(to top right, #1c645f 50%, #FF9966 90%);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 180px;
+  overflow: visible;
+}
+
+/* Optional Grid Overlay */
+.hero-section-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 50px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 50px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Bottom Background Fill to Match Overlap */
+.hero-section-background::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background-color: #f8f9fa;
+  z-index: 0;
+}
+
+/* Ensure content stays above overlay */
+.hero-section-background > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Overlapping Image */
+.hero-overlap-img {
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Headline Typography */
+.hero-main-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.text-orange {
+  color: #FF9966;
+}
+
+/* ===== CTA Buttons ===== */
+.btn-custom-primary {
+  background-color: #FF9966;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(255, 153, 102, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-custom-primary:hover {
+  background-color: #ff7a33;
+  transform: translateY(-2px);
+}
+
+.btn-custom-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-custom-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .hero-main-heading {
+    font-size: 2rem;
+  }
+
+  .hero-overlap-img {
+    bottom: -100px;
+    max-width: 90%;
+  }
+
+  .hero-section-background::after {
+    height: 100px;
+    bottom: -100px;
+  }
+
+  .btn-custom-primary,
+  .btn-custom-secondary {
+    width: auto;
+    max-width: 90%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .d-flex.justify-content-center.gap-3.mb-5 {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}

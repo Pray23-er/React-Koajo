@@ -68,12 +68,24 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item ms-lg-3">
-                <Link to="/loginlayout">
-                  <button className="btn btn-warning rounded-pill px-4">
-                    Get Started <i className="bi bi-arrow-right ms-2"></i>
-                  </button>
-                </Link>
-              </li>
+              <Link to="/loginlayout">
+                <button
+                  className="btn d-inline-flex align-items-center rounded-pill px-4"
+                  style={{
+                    backgroundColor: '#FF9966',
+                    color: 'white',
+                    fontWeight: 600,
+                    border: 'none',
+                    transition: 'background-color 0.3s ease, transform 0.2s ease'
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#e67a4d')}
+                  onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#FF9966')}
+                >
+                  Get Started <i className="bi bi-arrow-right ms-2"></i>
+                </button>
+              </Link>
+            </li>
+
             </ul>
           </div>
         </nav>

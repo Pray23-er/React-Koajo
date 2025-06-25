@@ -1,47 +1,9 @@
-/* StylingText.css (Consolidated and Cleaned) */
-
-/* --- Scrolling Text Styles --- */
-.scrolling-text-container {
-  width: 100%; /* Ensures it takes the full width of its parent (.container) */
-  overflow: hidden; /* **THIS IS KEY:** Hides any horizontal content that goes beyond its bounds */
-  padding: 10px 0; /* Add vertical padding if desired */
-  /* white-space: nowrap; - Removed from here, moved to .scrolling-text */
-}
-
-.scrolling-text {
-  display: flex; /* Arranges pod items horizontally */
-  white-space: nowrap; /* Ensures pod items stay on a single line */
-  /* The animation will handle positioning; do NOT use padding-left: 100%; here */
-  animation: scrollText 20s linear infinite; /* Adjust duration as needed */
-  will-change: transform; /* Optimize for animation performance */
-}
-
-.pod-item {
-  display: inline-block; /* Essential for proper spacing and sizing within flex */
-  margin-right: 15px; /* Spacing between the pills */
-  flex-shrink: 0; /* Prevents items from shrinking in flex container */
-}
-
-@keyframes scrollText {
-  0% {
-    /* Start the animation with the text entirely off-screen to the right.
-       This prevents an initial horizontal scrollbar as content is not 'visible' yet. */
-    transform: translateX(100%);
-  }
-  100% {
-    /* Move the text to the left. The -100% here refers to the total width
-       of the .scrolling-text element itself. You might need to adjust
-       this value slightly (e.g., -120% or -150%) if the loop isn't seamless
-       due to the combined width of all pod-items + their margins. */
-    transform: translateX(-100%);
-  }
-}
-
-/* --- Section Slide-In Animation --- */
+/* --- General Animation on Scroll (Section Slide-In) --- */
 .section-slide-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
 }
 
 .section-visible {
@@ -49,7 +11,6 @@
   transform: translateY(0);
 }
 
-/* --- General Animation on Scroll (from KoajoBenefits) --- */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(50px);
@@ -62,14 +23,349 @@
   transform: translateY(0);
 }
 
-/* --- Specific Table Adjustments for KoajoBenefits (if needed beyond what was done in JS) --- */
-/* If the table in KoajoBenefits still causes overflow, add specific rules here.
-   However, the adjustments in KoajoBenefits.jsx (smaller px/py and 'small' class)
-   should typically be enough. */
-/* Example:
-.koajo-comparison-table table th,
-.koajo-comparison-table table td {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+/* --- Scrolling Text Styles (Pod Type Tag Row) --- */
+.scrolling-text-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 10px;
 }
-*/
+
+.scrolling-text-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scrolling-text {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 12px;
+  will-change: transform;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  animation: scrollText 25s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.pod-item {
+  display: inline-block;
+  background-color: #666;
+  color: white;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.pod-item:hover {
+  background-color: #4CAF50;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Scroll Fix */
+@media (max-width: 576px) {
+  .scrolling-text-container {
+    overflow-x: auto;
+  }
+
+  .scrolling-text {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .pod-item {
+    margin: 4px;
+  }
+}
+
+/* --- Solving Real Financial Challenges Section --- */
+.financial-challenge-image {
+  border-radius: 1rem;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 6px 6px rgba(0, 0, 0, 0.15),
+    0 0 0 8px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.financial-challenge-image:hover {
+  transform: translateY(-5px);
+}
+
+.d-flex.align-items-start h3 {
+  line-height: 1.4;
+}
+
+.d-flex.align-items-start p {
+  line-height: 1.6;
+}
+
+.d-flex.align-items-start .h4,
+.d-flex.align-items-start .feature-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #ffc107;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 991.98px) {
+  .financial-challenge-image {
+    margin-bottom: 2rem;
+  }
+}
+
+/* --- Empowering Millions Section --- */
+.sign-up-steps-section {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a1a, #333333); /* Dark gradient background */
+  color: white;
+  padding: 3rem 1rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Checked Grid Overlay */
+.sign-up-steps-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 20px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 20px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+
+.text-highlight {
+  color: #ffc107;
+}
+
+.sign-up-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sign-up-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.sign-up-step-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.sign-up-step-badge {
+  width: 55px;
+  height: 55px;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #ffc107;
+  color: #212529;
+  font-weight: bold;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.sign-up-steps-section img {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sign-up-steps-section h3 {
+  font-size: 1.25rem;
+}
+
+.sign-up-steps-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .sign-up-step-item {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .sign-up-step-badge {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .sign-up-steps-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .sign-up-steps-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .sign-up-steps-section p {
+    font-size: 0.95rem;
+  }
+
+  .sign-up-steps-section img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sign-up-step-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sign-up-step-badge {
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+
+/* --- Section: Why Choose Koajo --- */
+.koajo-choose-section {
+  background: linear-gradient(to right, #e0f2f7, #f0f8ff);
+  padding: 4rem 0;
+}
+
+/* Icon Style Enhancements */
+.feature-icon-lg {
+  font-size: 2.75rem;
+  color: #ff8c42;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Headings: More visual hierarchy */
+.feature-heading {
+  font-weight: 700;
+  color: #222;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraph text block limits width for readability */
+.feature-text-block {
+  max-width: 380px;
+  line-height: 1.6;
+}
+
+/* Card item alignment */
+.feature-card-item {
+  align-items: flex-start;
+}
+
+/* Section Headline */
+.koajo-choose-section h2 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #222;
+}
+
+/* Lead paragraph improvement */
+.koajo-choose-section .lead {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* Star icon spacing and size */
+.koajo-choose-section .fs-4 {
+  color: #ffc107;
+  margin-top: -0.25rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .feature-text-block {
+    max-width: 100%;
+  }
+
+  .feature-icon-lg {
+    font-size: 2.25rem;
+  }
+
+  .feature-heading {
+    font-size: 1.1rem;
+  }
+
+  .koajo-choose-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .koajo-choose-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Optional: animate-on-scroll general class */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Custom Orange Button */
+.btn-orange {
+  background-color: #FF9966;
+  color: white;
+  border: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 153, 102, 0.3);
+}
+
+.btn-orange:hover {
+  background-color: #e67a4d;
+  color: white;
+  transform: translateY(-2px);
+}

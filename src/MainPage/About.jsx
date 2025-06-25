@@ -59,15 +59,22 @@ function AboutPage() {
         ref={aboutHeroSectionRef} // Attach the ref here
         // Apply the animation classes conditionally
         className={`py-5 text-white position-relative overflow-hidden ${isAboutHeroSectionVisible ? 'animate-on-scroll is-visible' : 'animate-on-scroll'}`}
-        style={{
-          background: 'linear-gradient(to bottom right, #004d40, #ff8c42)', // Approximated gradient background
-          minHeight: '80vh', // Adjust as needed
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          paddingTop: '120px', // INCREASED TOP PADDING
-          paddingBottom: '80px', // Example padding
-        }}
+    style={{
+  backgroundImage: `
+    linear-gradient(to top right, #1c645f 50%, #FF9966 90%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 40px)
+  `,
+  backgroundBlendMode: 'overlay',
+  minHeight: '80vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingTop: '120px',
+  paddingBottom: '80px',
+  backgroundSize: 'cover'
+}}
+
       >
         <div className="container position-relative z-1">
           <div className="row justify-content-center">
