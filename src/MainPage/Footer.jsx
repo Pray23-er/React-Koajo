@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Make sure this is imported for icons
-import koajologo from '../assets/logo/logoCyan Blue bg.png';
+import koajologo from '../assets/logo/logoCyan Blue bg.png'; // Assuming this path is correct
 import './StylingText.css';
 import './Footer.css' // Your custom CSS file
 
@@ -14,7 +14,7 @@ function Footer() {
       <div className="container text-white py-5">
         {/* CTA Section */}
         <div className="text-center mb-5 pb-4 border-bottom border-secondary">
-    
+
           <h2 className="display-4 fw-bold mb-3">
             Ready for financial possibilities?
           </h2>
@@ -28,54 +28,58 @@ function Footer() {
           </button>
         </div>
 
-        {/* Footer Navigation and Info */}
-        {/* Added custom class 'footer-nav-row' for column alignment */}
+        {/* Footer Navigation and Info - Updated column structure for 4 main columns */}
         <div className="row justify-content-center text-start g-4 pb-4 border-bottom border-secondary footer-nav-row">
-          {/* Logo and Tagline */}
-          <div className="col-md-6 col-lg-3 d-flex flex-column align-items-start">
-          <h1>Koajo</h1>
+          {/* Column 1: Logo and Tagline (col-lg-3) */}
+          <div className="col-md-6 col-lg-3 d-flex flex-column align-items-start"> {/* Changed to col-lg-3 */}
+            <h1>Koajo</h1> {/* Assuming this is the text logo, use img for image logo */}
+            {/* If you wanted to use the image logo:
+            <img src={koajologo} alt="Koajo Logo" className="img-fluid mb-2" style={{ maxWidth: '100px' }} /> */}
             <p className="text-white small">Make Online Payment Simple.</p>
           </div>
 
-          {/* Contact */}
-          <div className="col-md-6 col-lg-2">
-            <h4 className="fw-bold mb-3">Contact</h4>
-            <ul className="list-unstyled">
-              <li>
-                <a href="tel:+18884567890" className="text-light text-decoration-none footer-icon-link">
-                  <i className="bi bi-phone me-2"></i> {/* Phone icon */}
-                  (888) 456 7890
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@example.com" className="text-light text-decoration-none footer-icon-link">
-                  <i className="bi bi-envelope me-2"></i> {/* Envelope icon */}
-                  info@example.com
-                </a>
-              </li>
-            </ul>
+          {/* Column 2: Combined Contact and Address (col-lg-3) */}
+          <div className="col-md-6 col-lg-3"> {/* Changed to col-lg-3 */}
+            {/* Contact */}
+            <div className="mb-4"> {/* Added margin-bottom for spacing when stacked */}
+              <h4 className="fw-bold mb-3">Contact</h4>
+              <ul className="list-unstyled">
+                <li>
+                  <a href="tel:+18884567890" className="text-light text-decoration-none footer-icon-link">
+                    <i className="bi bi-phone me-2"></i> {/* Phone icon */}
+                    (888) 456 7890
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@example.com" className="text-light text-decoration-none footer-icon-link">
+                    <i className="bi bi-envelope me-2"></i> {/* Envelope icon */}
+                    info@example.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Address */}
+            <div> {/* No mb-4 here, as it's the last item in this combined column */}
+              <h4 className="fw-bold mb-3">Address</h4>
+              <ul className="list-unstyled">
+                <li>
+                  <span className="footer-icon-link">
+                    <i className="bi bi-geo-alt me-2"></i> {/* Location icon */}
+                    410 Sandtown,
+                  </span>
+                </li>
+                <li>
+                  <span className="footer-icon-link">
+                    California 9400/USA
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Address */}
-          <div className="col-md-6 col-lg-2">
-            <h4 className="fw-bold mb-3">Address</h4>
-            <ul className="list-unstyled">
-              <li>
-                <span className="footer-icon-link">
-                  <i className="bi bi-geo-alt me-2"></i> {/* Location icon */}
-                  410 Sandtown,
-                </span>
-              </li>
-              <li>
-                <span className="footer-icon-link">
-                  California 9400/USA
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div className="col-md-6 col-lg-2">
+          {/* Column 3: Quick Links (new col-lg-3, separated) */}
+          <div className="col-md-6 col-lg-3"> {/* Changed to col-lg-3 */}
             <h4 className="fw-bold mb-3">Quick Links</h4>
             <ul className="list-unstyled">
               <li>
@@ -87,7 +91,7 @@ function Footer() {
                 <a href="about.html" className="text-light text-decoration-none footer-icon-link">
                   <i className="bi bi-info-circle me-2"></i> About
                 </a>
-              </li>
+                </li>
               <li>
                 <a href="#" className="text-light text-decoration-none footer-icon-link">
                   <i className="bi bi-grid-fill me-2"></i> Features
@@ -101,8 +105,8 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Utility Pages */}
-          <div className="col-md-6 col-lg-2">
+          {/* Column 4: Utility Pages (new col-lg-3, separated) */}
+          <div className="col-md-6 col-lg-3"> {/* Changed to col-lg-3 */}
             <h4 className="fw-bold mb-3">Utility Pages</h4>
             <ul className="list-unstyled">
               <li>
@@ -130,7 +134,7 @@ function Footer() {
         </div>
       </div>
 
-     
+      {/* Copyright and Disclaimer Section (remains unchanged) */}
       <div className="text-dark py-3 text-center footer-copyright-section">
         <div className="container">
           <p className="mb-2 small">

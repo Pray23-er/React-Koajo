@@ -51,7 +51,13 @@ function ChooseYourPlanSection() {
 
         <div className="row g-4 justify-content-center">
           {plans.map((plan) => (
-            <div key={plan.id} className="col-lg-4 col-md-6">
+            <div
+              key={plan.id}
+              // Conditional class application:
+              // If it's the custom plan, make it col-lg-8 (two of col-lg-4) and col-md-12 (full width on medium)
+              // Otherwise, keep it as col-lg-4 col-md-6
+              className={plan.isCustom ? "col-lg-8 col-md-12" : "col-lg-4 col-md-6"}
+            >
               <div className="card h-100 p-4 border-0 shadow-sm plan-card">
                 <div className="card-body d-flex flex-column">
                   <h3 className="card-title fw-bold mb-2" style={{ color: '#343a40' }}>

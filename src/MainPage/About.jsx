@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'; // Import useRef, us
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './StylingText.css'; // Your existing CSS file
  // Import your animations CSS
-import aboutheroImage from '../assets/img/about_hero_image.jpeg'; // 
+import aboutheroImage from '../assets/img/image.png'; // 
 import aboutphoneImage from '../assets/img/about_image_phone.jpeg'; // <--- UPDATE THIS PATH
 import whatDrivesKoajoImage from '../assets/img/phone.png'; 
 import williamIkwoagoImage from '../assets/img/william.png';
@@ -60,11 +60,7 @@ function AboutPage() {
         // Apply the animation classes conditionally
         className={`py-5 text-white position-relative overflow-hidden ${isAboutHeroSectionVisible ? 'animate-on-scroll is-visible' : 'animate-on-scroll'}`}
     style={{
-  backgroundImage: `
-    linear-gradient(to top right, #1c645f 50%, #FF9966 90%),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 40px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 40px)
-  `,
+  backgroundImage: 'linear-gradient(to top right, #1c645f 50%, #FF9966 100%)',
   backgroundBlendMode: 'overlay',
   minHeight: '80vh',
   display: 'flex',

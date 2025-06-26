@@ -1,6 +1,6 @@
 /* ===== Hero Section Background ===== */
 .hero-section-background {
-  background: linear-gradient(to top right, #1c645f 50%, #FF9966 90%);
+  background: linear-gradient(to top right, #1c645f 50%, #FF9966 100%);
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -15,9 +15,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
+  /* background-image:
     repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 50px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 50px);
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 50px); */
   z-index: 0;
   pointer-events: none;
 }

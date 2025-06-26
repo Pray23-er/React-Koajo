@@ -12,7 +12,8 @@ import KoajoBenefits from './KoajoBenefits'; // Already updated in previous resp
 import ScrollToTopArrow from './ScrollArrow';
 
 function LandingPage() {
-  const podNames = ["Ajo Esusu", "Tandas", "Kye", "Susu", "Panda", "Mikado", "Poro", "Lugh", "More Pods Coming Soon"];
+  // UPDATED: Pod names to match the image
+  const podNames = ["Kye", "Susu", "Panda", "Mikado", "Poro", "Lughu", "Vumi", "Harambe"];
 
   useEffect(() => {
     // Select all elements that should have the scroll animation.
@@ -119,16 +120,16 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* Section: Explore Different Pod Types */}
-      <section className="py-5 bg-white text-dark text-center overflow-hidden section slide in">
+      {/* NEW/UPDATED Section: Explore More Pods - Designed to match the image */}
+      <section className="py-5 bg-white text-dark text-center overflow-hidden section slide-in">
         <div className="container">
-          <h2 className="mb-4">Explore Different Pod Types</h2>
-          <div className="scrolling-text-container">
-            <div className="scrolling-text">
+          <h2 className="mb-4 text-dark">Explore More Pods</h2> {/* Changed heading text and ensured white color */}
+          <div className="scrolling-text-container-new"> {/* New class for specific styling */}
+            <div className="scrolling-text-new"> {/* New class for specific styling */}
               {podNames.map((name, index) => (
                 <span
                   key={index}
-                  className="pod-item rounded-pill px-4 py-2 me-3"
+                  className="pod-item-new rounded-pill px-4 py-2 me-3" // New class for specific styling
                 >
                   {name}
                 </span>
@@ -139,57 +140,62 @@ function LandingPage() {
       </section>
 
       {/* --- Combined Section: Empowering Millions & Sign Up Steps --- */}
-    
-          <section className="sign-up-steps-section" >
-      <div className="container">
-        {/* Heading */}
-        <div className="text-center mb-5">
-          <h2 className="fw-bold">
-            See How We Are{' '}
-            <span className="text-orange">Empowering Millions</span>
-          </h2>
-        </div>
 
-        <div className="row align-items-center">
-          {/* Left: Image */}
-          <div className="col-lg-6 text-center mb-4">
-            <img src={loginform} alt="Login Form" />
-          </div>
+            <section className="py-5 sign-up-steps-section bg-dark text-white"> {/* Added bg-dark and text-white */}
+                <div className="container">
+                    {/* Heading */}
+                    <div className="text-center mb-4"> {/* Adjusted margin-bottom */}
+                        <h2 className="fw-bold mb-3"> {/* Added mb-3 */}
+                            See How We Are{' '}
+                            <span className="text-orange">Empowering Millions...</span> {/* Added ellipses */}
+                        </h2>
+                        <p className="lead text-white-50 mx-auto" style={{ maxWidth: '700px' }}> {/* Added mx-auto for centering */}
+                            Koajo modernizes the rotating savings model to help people save consistently, access
+                            money when needed, and break the cycle of financial insecurity.
+                        </p>
+                    </div>
 
-          {/* Right: Steps */}
-          <div className="col-lg-6">
-            <div className="sign-up-steps-container">
-              {/* Step 1 */}
-              <div className="sign-up-step-item">
-                <span className="sign-up-step-badge">01</span>
-                <div>
-                  <h3>Sign Up & Get Started</h3>
-                  <p>
-                    Create your Koajo account in just a few minutes and easily verify
-                    your identity to enjoy seamless access to all features and services.
-                  </p>
-                  <p className="small">No hassle, no sign-up fees.</p>
+                    <div className="row align-items-center">
+                        {/* Left: Image */}
+                        <div className="col-lg-6 text-center mb-4 mb-lg-0"> {/* Added mb-lg-0 for responsiveness */}
+                            <img src={loginform} alt="Login Form" className="img-fluid sign-up-form-img" /> {/* Added img-fluid and custom class */}
+                        </div>
+
+                        {/* Right: Steps */}
+                        <div className="col-lg-6">
+                            <div className="sign-up-steps-container">
+                                {/* Step 1 */}
+                                <div className="sign-up-step-item mb-4 mb-md-5"> {/* Adjusted margin-bottom */}
+                                    <span className="sign-up-step-badge">01</span>
+                                    <div className="sign-up-step-content"> {/* Added new div for content */}
+                                        <h3>Sign Up & Get Started</h3>
+                                        <p>
+                                            Create your Koajo account in just a few minutes and easily verify
+                                            your identity to enjoy seamless access to all features and services.
+                                        </p>
+                                        <p className="small text-white-50 mb-0">No hassle, no sign-up fees.</p> {/* Muted text color */}
+                                    </div>
+                                </div>
+
+                                {/* Step 2 */}
+                                <div className="sign-up-step-item">
+                                    <span className="sign-up-step-badge">02</span>
+                                    <div className="sign-up-step-content"> {/* Added new div for content */}
+                                        <h3>Choose or Create a Pod</h3>
+                                        <p>
+                                            Join a savings pod that fits your saving & financial goals or start
+                                            your own with people you trust. Each pod runs for 12 weeks at a
+                                            time, giving you short-term access to the lump sum.
+                                        </p>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </section>
 
-              {/* Step 2 */}
-              <div className="sign-up-step-item">
-                <span className="sign-up-step-badge">02</span>
-                <div>
-                  <h3>Choose or Create a Pod</h3>
-                  <p>
-                    Join a savings pod that fits your saving & financial goals or start
-                    your own with people you trust. Each pod runs for 12 weeks at a
-                    time, giving you short-term access to the lump sum.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-      
 
       <KoajoBenefits />
       <ChooseYourPlanSection />

@@ -2,13 +2,54 @@
 .section-slide-in {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  will-change: opacity, transform;
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .section-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.scrolling-text-container-new {
+  overflow: hidden; /* Ensures only the visible part of the scrolling text is shown */
+  white-space: nowrap; /* Prevents items from wrapping to the next line */
+  padding: 20px 0; /* Add some vertical padding */
+}
+
+.scrolling-text-new {
+  display: inline-block; /* Allows for horizontal scrolling */
+  animation: scroll-left 25s linear infinite; /* Adjust duration as needed */
+}
+
+.pod-item-new {
+  display: inline-block;
+  background-color: transparent; /* No fill color, just border */
+  color:black; /* White text color */
+  border: 2px solid black; /* White border */
+  border-radius: 50px; /* More rounded corners for pill shape */
+  padding: 10px 25px; /* Adjust padding as needed */
+  margin-right: 20px; /* Space between items */
+  font-weight: bold; /* Make text bolder if needed */
+  font-size: 1.2rem; /* Adjust font size */
+  transform: skewX(-15deg); /* Skew effect from the image */
+  transform-origin: bottom left; /* Adjust origin for skew */
+  line-height: 1; /* Adjust line height for better vertical alignment */
+}
+
+/* If you want to un-skew the text inside the skewed pill */
+.pod-item-new span {
+  display: inline-block;
+  transform: skewX(15deg); /* Counter-skew the text */
+}
+
+/* Keyframe animation for horizontal scrolling */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Scrolls the content entirely to the left */
+  }
 }
 
 .animate-on-scroll {
@@ -131,138 +172,144 @@
   }
 }
 
-/* --- Empowering Millions Section --- */
+/* Add to StylingText.css or a new file like LandingPage.css */
+
+/* --- Empowering Millions Section Styles (Matching Frame 1000004522.jpg) --- */
+
 .sign-up-steps-section {
-  position: relative;
-  background: linear-gradient(135deg, #1a1a1a, #333333); /* Dark gradient background */
-  color: white;
-  padding: 3rem 1rem;
-  overflow: hidden;
-  z-index: 1;
+    background-color: #1a1a1a; /* Dark background from the image */
+    color: white; /* Default text color for the section */
+    padding-top: 5rem; /* Equivalent to py-5 */
+    padding-bottom: 5rem; /* Equivalent to py-5 */
 }
 
-/* Checked Grid Overlay */
-.sign-up-steps-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: 
-    repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 20px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 20px);
-  z-index: 0;
-  pointer-events: none;
+.sign-up-steps-section h2 {
+    color: white; /* Ensure heading is white */
 }
 
-
-
-.text-highlight {
-  color: #ffc107;
+.sign-up-steps-section .text-orange {
+    color: #ff8c42 !important; /* Specific orange from your design */
 }
 
-.sign-up-steps-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+/* Paragraph below the main heading */
+.sign-up-steps-section .lead {
+    color: rgba(255, 255, 255, 0.7); /* Muted white for the lead paragraph */
 }
 
-.sign-up-step-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.sign-up-step-item:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.sign-up-step-badge {
-  width: 55px;
-  height: 55px;
-  font-size: 1.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background-color: #ffc107;
-  color: #212529;
-  font-weight: bold;
-  flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-}
-
-.sign-up-steps-section img {
-  max-width: 450px;
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.sign-up-steps-section h3 {
-  font-size: 1.25rem;
-}
-
-.sign-up-steps-section p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .sign-up-step-item {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .sign-up-step-badge {
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
-  }
-
-  .sign-up-steps-section h2 {
-    font-size: 1.75rem;
-  }
-
-  .sign-up-steps-section h3 {
-    font-size: 1.1rem;
-  }
-
-  .sign-up-steps-section p {
-    font-size: 0.95rem;
-  }
-
-  .sign-up-steps-section img {
+/* Image on the left (Login Form) */
+.sign-up-steps-section .sign-up-form-img {
     max-width: 100%;
-  }
+    height: auto;
+    border-radius: 15px; /* Rounded corners for the image */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
-@media (max-width: 480px) {
-  .sign-up-step-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* Container for the steps on the right */
+.sign-up-steps-container {
+    padding-left: 20px; /* Space for the line */
+    position: relative;
+}
 
-  .sign-up-step-badge {
+/* Vertical line connecting the steps */
+.sign-up-steps-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20px; /* Adjust based on badge size */
+    bottom: 20px; /* Adjust based on badge size */
+    width: 2px;
+    background-color: #333; /* Darker grey line */
+}
+
+/* Individual step item */
+.sign-up-step-item {
+    display: flex;
+    align-items: flex-start; /* Align content to the top */
+    margin-bottom: 3rem; /* Space between steps */
+    position: relative;
+}
+
+.sign-up-step-item:last-child {
+    margin-bottom: 0; /* No margin after the last step */
+}
+
+
+/* Number badge (01, 02) */
+.sign-up-step-badge {
+    flex-shrink: 0; /* Prevent badge from shrinking */
+    width: 40px; /* Size of the badge */
+    height: 40px;
+    background-color: #ff8c42; /* Orange background */
+    color: white;
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-right: 1.5rem; /* Space between badge and text */
+    position: relative;
+    z-index: 1; /* Ensure badge is above the line */
+    border: 2px solid #1a1a1a; /* Border to match background and create a cutout effect */
+}
+
+/* Content area for each step (heading and paragraphs) */
+.sign-up-step-content {
+    flex-grow: 1;
+}
+
+.sign-up-step-content h3 {
+    font-size: 1.6rem; /* Adjust heading size */
+    font-weight: 600;
+    color: white; /* White heading text */
     margin-bottom: 0.5rem;
-  }
+}
+
+.sign-up-step-content p {
+    font-size: 0.95rem; /* Adjust paragraph font size */
+    color: rgba(255, 255, 255, 0.7); /* Muted white for paragraphs */
+    margin-bottom: 0.5rem;
+}
+
+.sign-up-step-content p.small {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5); /* Even more muted for small text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) { /* Medium and small devices */
+    .sign-up-steps-section .text-center h2 {
+        font-size: 2.2rem; /* Adjust heading size for smaller screens */
+    }
+    .sign-up-steps-section .lead {
+        font-size: 1rem;
+    }
+    .sign-up-steps-container {
+        padding-left: 0; /* Remove left padding on smaller screens */
+    }
+    .sign-up-steps-container::before {
+        display: none; /* Hide vertical line on smaller screens */
+    }
+    .sign-up-step-item {
+        flex-direction: column; /* Stack badge and content vertically */
+        align-items: center; /* Center them horizontally */
+        text-align: center;
+        margin-bottom: 2rem; /* Less space between stacked items */
+    }
+    .sign-up-step-badge {
+        margin-right: 0;
+        margin-bottom: 1rem; /* Space between badge and content when stacked */
+    }
+    .sign-up-step-content h3 {
+        font-size: 1.4rem;
+    }
 }
 
 
 
 /* --- Section: Why Choose Koajo --- */
 .koajo-choose-section {
-  background: linear-gradient(to right, #e0f2f7, #f0f8ff);
+  background: white;
   padding: 4rem 0;
 }
 
